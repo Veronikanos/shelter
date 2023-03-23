@@ -1,0 +1,35 @@
+%h2 {
+  font-size: 44px;
+  line-height: calc(57 / 44);
+  color: $dark-headers-color;
+}
+
+%h3 {
+  font-size: 35px;
+  line-height: calc(45 / 35);
+  letter-spacing: 0.06em;
+  color: $dark-headers-color;
+}
+%h4 {
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  letter-spacing: 0.06em;
+  color: $dark-headers-color;
+}
+%h5 {
+  font-size: 15px;
+  line-height: calc(17 / 15);
+  letter-spacing: 0.06em;
+  color: $dark-headers-color;
+}
+
+%centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%transition {
+  transition: color $transition-duration $transition-timing-function,
+    background-color $transition-duration $transition-timing-function;
+}

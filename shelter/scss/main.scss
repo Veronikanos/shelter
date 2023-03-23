@@ -1,9 +1,6 @@
-// @import './style/utils/variables';
-// @import './style/utils/placeholders';
-// @import './style/utils/mixins';
+@import './utils/variables';
+@import './utils/placeholders';
+@import './utils/mixins';
 
-// @import './common';
-
-h1 {
-  font-size: 72px;
-}
+@import './common';
+@import './buttons';

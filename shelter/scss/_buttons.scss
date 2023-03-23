@@ -1,0 +1,36 @@
+.btn {
+  display: inline-block;
+  // padding: 10px 56px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: calc(20 / 15);
+  // font-family: $inter;
+  // border: 1px solid $orange;
+  border-radius: 10px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  // @media screen and (min-width: 768px) {
+  //   font-size: 16px;
+  //   font-weight: 400;
+  //   line-height: calc(20 / 16);
+  //   border: 2px solid $orange;
+  // }
+
+  @extend %transition;
+
+  &:hover,
+  &:focus {
+    // background-color: $orange;
+    // color: $white;
+  }
+
+  &:disabled {
+    // background-color: none;
+    // color: lightslategray;
+    // border: 1px solid lightslategray;
+    cursor: default;
+    @extend %transition;
+  }
+}
