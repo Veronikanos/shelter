@@ -1,0 +1,49 @@
+html {
+  scroll-behavior: smooth;
+  // overflow-y: scroll;
+}
+
+body {
+  // width: 1440px;
+  // margin: 0 auto;
+  // font-family: $inter;
+  // font-weight: 400;
+  // font-size: 20px;
+  // background-color: $background-color;
+  // line-height: calc(35 / 20);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  // min-width: 320px;
+  margin: 0 auto;
+  padding-right: 25px;
+  padding-left: 25px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    padding-right: 109px;
+    padding-left: 109px;
+  }
+}
+
+body.noscroll {
+  overflow: hidden;
+}
