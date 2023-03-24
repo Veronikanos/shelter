@@ -189,13 +189,21 @@ img {
 
 .btn {
   display: inline-block;
-  font-size: 15px;
+  padding: 15px 45px;
+  font-size: 17px;
+  font-family: "Georgia";
   font-weight: 400;
-  line-height: 1.3333333333;
-  border-radius: 10px;
   outline: none;
-  background-color: transparent;
+  background-color: #f1cdb3;
+  border: 1px solid #f1cdb3;
+  border-radius: 100px;
   cursor: pointer;
+}
+.btn:hover, .btn:focus {
+  background-color: #fddcc4;
+}
+.btn:active {
+  background-color: #ffffff;
 }
 .btn:disabled {
   cursor: default;
@@ -250,13 +258,19 @@ h1 {
 
 .hero {
   height: 908px;
+  background: url(../assets/images/noise_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+}
+.hero .hero-wrapper {
   background-image: url("../assets/images/start-screen-puppy.png");
   background-repeat: no-repeat;
   background-position-x: right;
-  background: url(../assets/images/noise_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+  background-position-y: bottom;
+  background-size: 698px;
+  height: 908px;
 }
 .hero-text {
   width: 460px;
+  padding-top: 343px;
 }
 .hero-header {
   margin-bottom: 42px;
