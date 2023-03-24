@@ -120,7 +120,7 @@ h5 {
   color: #545454;
 }
 
-.btn:disabled, .btn {
+.our-friends-item, .btn:disabled, .btn {
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
@@ -210,7 +210,7 @@ img {
 .btn:hover, .btn:focus {
   background-color: #fddcc4;
 }
-.btn:active {
+.btn.transparent {
   background-color: #ffffff;
 }
 .btn:disabled {
@@ -310,4 +310,41 @@ section.hero {
   flex-direction: column;
   gap: 25px;
   justify-content: center;
+}
+
+.our-friends {
+  background-color: #f6f6f6;
+}
+.our-friends .container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  text-align: center;
+}
+.our-friends-list {
+  display: flex;
+  gap: 90px;
+}
+.our-friends-image {
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.our-friends .pet-name {
+  display: block;
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  margin-bottom: 30px;
+}
+.our-friends .btn__learn-more {
+  margin-bottom: 30px;
+}
+.our-friends-item {
+  border-radius: 9px;
+  background-color: #fafafa;
 }/*# sourceMappingURL=main.css.map */
