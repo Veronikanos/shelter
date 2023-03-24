@@ -87,6 +87,7 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 img {
@@ -107,6 +108,13 @@ img {
 }
 .btn:disabled {
   cursor: default;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .header .container {
@@ -147,4 +155,23 @@ h1 {
   font-size: 13px;
   line-height: 14.95px;
   letter-spacing: 0.07em;
+}
+
+.hero {
+  height: 908px;
+  background-image: url("../assets/images/start-screen-puppy.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background: url(../assets/images/noise_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+}
+.hero-text {
+  width: 460px;
+}
+.hero-header {
+  margin-bottom: 42px;
+  color: #ffffff;
+}
+.hero-description {
+  margin-bottom: 42px;
+  color: #cdcdcd;
 }/*# sourceMappingURL=main.css.map */
