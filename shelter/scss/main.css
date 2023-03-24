@@ -1,16 +1,10 @@
 h2 {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
   font-size: 44px;
   line-height: 1.2954545455;
   color: #545454;
 }
 
 h3 {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
   font-size: 35px;
   line-height: 1.2857142857;
   letter-spacing: 0.06em;
@@ -18,9 +12,6 @@ h3 {
 }
 
 h4 {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.06em;
@@ -28,22 +19,30 @@ h4 {
 }
 
 h5 {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
   font-size: 15px;
   line-height: 1.1333333333;
   letter-spacing: 0.06em;
   color: #545454;
 }
 
+.btn:disabled, .btn {
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+}
+
+nav .nav-item__link {
+  transition: color 300ms ease-in-out;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  width: 1280px;
   margin: 0 auto;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
 }
 
 body.noscroll {
@@ -64,16 +63,10 @@ body.noscroll {
 }
 
 .container {
+  max-width: 1280px;
   margin: 0 auto;
-  padding-right: 25px;
-  padding-left: 25px;
-}
-@media screen and (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-    padding-right: 109px;
-    padding-left: 109px;
-  }
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
 ul {
@@ -102,67 +95,56 @@ img {
   height: auto;
 }
 
-html {
-  scroll-behavior: smooth;
+.btn {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3333333333;
+  border-radius: 10px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn:disabled {
+  cursor: default;
 }
 
-body {
-  width: 1280px;
-  margin: 0 auto;
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-body.noscroll {
-  overflow: hidden;
+.logo {
+  font-size: 32px;
+  line-height: 1.09375;
+  color: #f1cdb3;
+  letter-spacing: 0.01em;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+nav {
+  font-family: "Arial";
+}
+nav .nav-menu {
+  display: flex;
+  gap: 35px;
+}
+nav .nav-item {
+  padding: 46px 0;
+}
+nav .nav-item__link {
+  border-bottom: 3px solid transparent;
+  color: #cdcdcd;
+}
+nav .nav-item__link:hover, nav .nav-item__link:active {
+  border-bottom: 3px solid #f1cdb3;
+  color: #fafafa;
 }
 
-.container {
-  margin: 0 auto;
-  padding-right: 25px;
-  padding-left: 25px;
-}
-@media screen and (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-    padding-right: 109px;
-    padding-left: 109px;
-  }
-}
-
-ul {
-  list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+h1 {
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 14.95px;
+  letter-spacing: 0.07em;
 }/*# sourceMappingURL=main.css.map */

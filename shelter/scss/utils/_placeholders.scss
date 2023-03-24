@@ -33,3 +33,7 @@
   transition: color $transition-duration $transition-timing-function,
     background-color $transition-duration $transition-timing-function;
 }
+
+%transition-color {
+  transition: color $transition-duration $transition-timing-function;
+}

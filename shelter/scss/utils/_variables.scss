@@ -1,18 +1,22 @@
 // background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
 
+// Colors
 $light-bg: #f6f6f6;
 $dark-bg: #211f20;
 $main-color: #ffffff;
-
-$primary-color: #f1cdb3;
-
 $hover-btn: #fddcc4;
+$primary-color: #f1cdb3;
 $active-color: #f1cdb3;
-
+$active-link: #fafafa;
 $dark-headers-color: #545454;
 $dark-text-color: #4c4c4c;
 $dark-btn-text: #292929;
 $light-btn-text: #cdcdcd;
 
+// Fonts
 $main-font: 'Georgia';
 $secondary-font: 'Arial';
+
+// Transition
+$transition-duration: 300ms;
+$transition-timing-function: ease-in-out;

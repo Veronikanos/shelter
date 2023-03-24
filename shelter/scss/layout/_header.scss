@@ -1,0 +1,49 @@
+.header {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  font-size: 32px;
+  line-height: calc(35 / 32);
+  color: $primary-color;
+  letter-spacing: 0.01em;
+}
+
+nav {
+  font-family: $secondary-font;
+
+  .nav-menu {
+    display: flex;
+    gap: 35px;
+  }
+  .nav-item {
+    padding: 46px 0;
+    &__link {
+      // padding: 46px 0;
+      border-bottom: 3px solid transparent;
+      color: $light-btn-text;
+      @extend %transition-color;
+
+      &:hover,
+      &:active {
+        border-bottom: 3px solid $active-color;
+        color: $active-link;
+      }
+    }
+  }
+}
+h1 {
+  font-family: $secondary-font;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 14.95px;
+  letter-spacing: 0.07em;
+  // color: $main-color;
+
+  // Align: Left
+  // Vertical align: Center
+}
