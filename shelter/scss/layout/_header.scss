@@ -35,7 +35,6 @@ nav {
       color: $light-btn-text;
       @extend %transition-color;
 
-      &:hover,
       &:active {
         border-bottom: 3px solid $active-color;
         color: $active-link;
@@ -48,7 +47,7 @@ h1 {
   font-weight: 400;
   font-size: 13px;
   line-height: 14.95px;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   // color: $main-color;
 
   // Align: Left

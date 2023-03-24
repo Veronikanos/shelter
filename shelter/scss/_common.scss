@@ -31,6 +31,11 @@ body.noscroll {
   overflow: hidden;
 }
 
+section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
 .container {
   // min-width: 320px;
   max-width: 1280px;
@@ -73,7 +78,7 @@ a {
 
 img {
   display: block;
-  max-width: 100%;
+  // max-width: 100%;
   height: auto;
 }
 
