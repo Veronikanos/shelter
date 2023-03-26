@@ -392,4 +392,23 @@ section.hero {
 }
 .our-friends .btn__learn-more:hover {
   background-color: #fddcc4;
+}
+
+.help-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+.help-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 58px;
+  column-gap: 120px;
+}
+.help-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }/*# sourceMappingURL=main.css.map */
