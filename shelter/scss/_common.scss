@@ -97,3 +97,12 @@ h4 {
 h5 {
   @extend %h5;
 }
+
+.paragraph-s {
+  font-family: $secondary-font;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(18 / 15);
+  color: #b2b2b2;
+}

@@ -1,4 +1,6 @@
 .our-friends {
+  background-color: $light-bg;
+
   .container {
     display: flex;
     flex-direction: column;
@@ -6,7 +8,6 @@
     align-items: center;
     text-align: center;
   }
-  background-color: $light-bg;
 
   &__slider {
     position: relative;

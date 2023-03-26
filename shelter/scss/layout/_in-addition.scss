@@ -1,0 +1,48 @@
+.in-addition {
+  background-color: $light-bg;
+
+  &-container {
+    display: flex;
+    max-width: 915px;
+    gap: 30px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &-header {
+    max-width: 300px;
+
+    & + p {
+      color: $dark-headers-color;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    // width: 380px;
+  }
+
+  .card-number {
+    width: 350px;
+    padding: 10px 15px;
+    background: $primary-color;
+    border-radius: 9px;
+    position: relative;
+
+    & h4 {
+      text-indent: 45px;
+			color: $dark-headers-color;
+    }
+  }
+
+  .card-number::before {
+    position: absolute;
+    content: url(../assets/icons/credit-card.svg);
+    height: 23px;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+  }
+}
