@@ -7,9 +7,67 @@
     text-align: center;
   }
   background-color: $light-bg;
+
+  &__slider {
+    position: relative;
+
+    .prev,
+    .next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 2px solid $active-color;
+      outline: none;
+
+      cursor: pointer;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+      transform: rotate(-180deg);
+    }
+
+    .icon {
+      display: block;
+      border-radius: 50%;
+      fill: $dark-btn-text;
+    }
+  }
+
   &-list {
+    width: 1200px;
     display: flex;
+    justify-content: center;
     gap: 90px;
+  }
+
+  &-item {
+    width: 270px;
+    height: 100%;
+    border-radius: 9px;
+    background-color: $active-link;
+    box-shadow: none;
+    transition: box-shadow $transition-duration
+        $transition-timing-function,
+      color $transition-duration $transition-timing-function,
+      background-color $transition-duration
+        $transition-timing-function;
+
+    &:hover {
+      background-color: $main-color;
+      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    }
   }
 
   &-image {
@@ -31,16 +89,12 @@
 
   .btn__learn-more {
     margin-bottom: 30px;
-  }
+    transition: background-color $transition-duration
+      $transition-timing-function;
 
-  &-item {
-    border-radius: 9px;
-    background-color: $active-link;
-    @extend %transition;
-
-    // &:hover {
-    //   background-color: $light-btn-text;
-    // }
+    &:hover {
+      background-color: $hover-btn;
+    }
   }
 }
 // box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
