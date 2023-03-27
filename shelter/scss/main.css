@@ -686,28 +686,6 @@ footer address .right-side .address-link::before {
 .our-friends.pets-page__slider {
   position: relative;
 }
-.our-friends.pets-page__slider .prev,
-.our-friends.pets-page__slider .next {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid #f1cdb3;
-  outline: none;
-  cursor: pointer;
-}
-.our-friends.pets-page__slider .prev {
-  left: 0;
-}
-.our-friends.pets-page__slider .next {
-  right: 0;
-}
 .our-friends.pets-page__slider .icon {
   display: block;
   border-radius: 50%;
@@ -773,6 +751,10 @@ footer address .right-side .address-link::before {
   letter-spacing: 0.06em;
   border-width: 2px;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.our-friends.pets-page .our-friends__pagination .pagination-btn:hover {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
 }
 .our-friends.pets-page .our-friends__pagination .pagination-btn:disabled {
   background-color: transparent;
