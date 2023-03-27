@@ -27,6 +27,15 @@
   color: $dark-headers-color;
 }
 
+%small-additional-text {
+  font-family: $secondary-font;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(18 / 12);
+  color: #b2b2b2;
+}
+
 %centered {
   display: flex;
   align-items: center;

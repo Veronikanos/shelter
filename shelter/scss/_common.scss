@@ -9,9 +9,9 @@ body {
   font-family: $main-font;
   font-weight: 400;
   font-size: 15px;
-  line-height: 24px;
+  // line-height: 24px;
   // background-color: $background-color;
-  // line-height: calc(35 / 20);
+  line-height: calc(24 / 15);
 }
 
 body.noscroll {
@@ -96,13 +96,4 @@ h4 {
 
 h5 {
   @extend %h5;
-}
-
-.paragraph-s {
-  font-family: $secondary-font;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: calc(18 / 15);
-  color: #b2b2b2;
 }

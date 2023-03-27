@@ -120,6 +120,15 @@ h5 {
   color: #545454;
 }
 
+.in-addition .paragraph-s {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #b2b2b2;
+}
+
 .btn:disabled, .btn {
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -137,7 +146,7 @@ body {
   font-family: "Georgia";
   font-weight: 400;
   font-size: 15px;
-  line-height: 24px;
+  line-height: 1.6;
 }
 
 body.noscroll {
@@ -195,21 +204,14 @@ img {
   height: auto;
 }
 
-.paragraph-s {
-  font-family: "Arial";
-  font-style: italic;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.2;
-  color: #b2b2b2;
-}
-
 .btn {
   display: inline-block;
-  padding: 15px 45px;
+  padding: 14px 45px;
   font-size: 17px;
   font-family: "Georgia";
   font-weight: 400;
+  line-height: 1.2941176471;
+  letter-spacing: 0.06em;
   outline: none;
   background-color: #f1cdb3;
   border: 1px solid #f1cdb3;
@@ -243,7 +245,18 @@ header {
   font-size: 32px;
   line-height: 1.09375;
   color: #f1cdb3;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.06em;
+}
+.logo span {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.logo h1 {
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.1538461538;
+  letter-spacing: 0.1em;
 }
 
 nav {
@@ -283,19 +296,8 @@ nav .nav-item.disabled {
   pointer-events: none;
 }
 
-h1 {
-  font-family: "Arial";
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 14.95px;
-  letter-spacing: 0.06em;
-}
-
-section.hero {
-  padding: 0;
-}
-
 .hero {
+  padding: 0;
   height: 908px;
   background: url(../assets/images/noise_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 }
@@ -312,6 +314,7 @@ section.hero {
   padding-top: 343px;
 }
 .hero-header {
+  max-width: 310px;
   margin-bottom: 42px;
   color: #ffffff;
 }
@@ -373,12 +376,14 @@ section.hero {
 }
 .our-friends__slider .next {
   right: 0;
-  transform: rotate(-180deg);
 }
 .our-friends__slider .icon {
   display: block;
   border-radius: 50%;
   fill: #292929;
+}
+.our-friends__slider .arrow-right {
+  transform: rotate(-180deg);
 }
 .our-friends-list {
   width: 1200px;
@@ -453,13 +458,14 @@ section.hero {
 .in-addition-header {
   max-width: 300px;
 }
-.in-addition-header + p {
-  color: #545454;
-}
 .in-addition__text {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 16px;
+}
+.in-addition .name-of-bank {
+  letter-spacing: 0.06em;
+  color: #545454;
 }
 .in-addition .card-number {
   width: 350px;
@@ -486,22 +492,21 @@ footer {
   background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
 }
 footer .footer-wrapper {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 40px 40px 0;
-}
-footer .footer-container {
-  background-image: url("../assets/images/footer-puppy.png");
-  background-repeat: no-repeat;
-  background-position-x: right;
-  background-position-y: bottom;
-  background-size: 300px;
-  height: 310px;
+  display: flex;
+  justify-content: space-between;
 }
 footer address {
+  height: fit-content;
+  margin-top: 16px;
+  width: 73%;
   display: flex;
+  justify-content: space-between;
 }
 footer address .address-headers-text {
+  max-width: 280px;
   font-size: 35px;
   line-height: 1.2857142857;
   letter-spacing: 0.06em;
@@ -518,10 +523,10 @@ footer address .address-text {
   color: #f1cdb3;
 }
 footer address .left-side {
-  width: 33.3333333333%;
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 46px;
 }
 footer address .left-side .email-link,
 footer address .left-side .phone-link {
@@ -549,13 +554,14 @@ footer address .left-side .phone-link::before {
   transform: translateY(-50%);
 }
 footer address .right-side {
-  width: 33.3333333333%;
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 footer address .right-side .address-link {
   position: relative;
+  max-width: 260px;
 }
 footer address .right-side .address {
   position: relative;

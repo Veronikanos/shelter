@@ -36,13 +36,16 @@
 
     .next {
       right: 0;
-      transform: rotate(-180deg);
     }
 
     .icon {
       display: block;
       border-radius: 50%;
       fill: $dark-btn-text;
+    }
+
+    .arrow-right {
+      transform: rotate(-180deg);
     }
   }
 
@@ -98,4 +101,3 @@
     }
   }
 }
-// box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);

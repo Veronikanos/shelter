@@ -17,7 +17,19 @@ header {
   font-size: 32px;
   line-height: calc(35 / 32);
   color: $primary-color;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.06em;
+
+  span {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: $secondary-font;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: calc(15 / 13);
+    letter-spacing: 0.1em;
+  }
 }
 
 nav {
@@ -65,11 +77,4 @@ nav {
   .nav-item.disabled {
     pointer-events: none;
   }
-}
-h1 {
-  font-family: $secondary-font;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 14.95px;
-  letter-spacing: 0.06em;
 }

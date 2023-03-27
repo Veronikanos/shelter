@@ -1,8 +1,5 @@
-section.hero {
-  padding: 0;
-}
-
 .hero {
+  padding: 0;
   height: 908px;
 
   background: url(../assets/images/noise_transparent@2X.png),
@@ -17,7 +14,6 @@ section.hero {
     background-position-y: bottom;
     background-size: 698px;
     height: 908px;
-    // padding-top: 50px;
   }
 
   &-text {
@@ -25,6 +21,7 @@ section.hero {
     padding-top: 343px;
   }
   &-header {
+    max-width: 310px;
     margin-bottom: 42px;
     color: $main-color;
   }

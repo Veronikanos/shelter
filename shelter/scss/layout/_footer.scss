@@ -1,5 +1,4 @@
 footer {
-  // padding: 40px 40px 0;
   background: url(noise_lines_transparent@2X.png),
     radial-gradient(
       110.67% 538.64% at 5.73% 50%,
@@ -9,24 +8,22 @@ footer {
     #211f20;
 
   .footer-wrapper {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 40px 40px 0;
-  }
-
-  .footer-container {
-    background-image: url('../assets/images/footer-puppy.png');
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: bottom;
-    background-size: 300px;
-    height: 310px;
+    display: flex;
+    justify-content: space-between;
   }
 
   address {
+    height: fit-content;
+    margin-top: 16px;
+    width: 73%;
     display: flex;
+    justify-content: space-between;
 
     .address-headers-text {
+      max-width: 280px;
       font-size: 35px;
       line-height: calc(45 / 35);
       letter-spacing: 0.06em;
@@ -36,6 +33,7 @@ footer {
     }
 
     .address-text {
+      // max-width: 260px;
       font-size: 20px;
       line-height: calc(23 / 20);
       letter-spacing: 0.06em;
@@ -45,10 +43,10 @@ footer {
     }
 
     .left-side {
-      width: calc(100% / 3);
+      flex: 1 1 50%;
       display: flex;
       flex-direction: column;
-      gap: 45px;
+      gap: 46px;
 
       .email-link,
       .phone-link {
@@ -79,13 +77,14 @@ footer {
       }
     }
     .right-side {
-      width: calc(100% / 3);
+      flex: 1 1 50%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
       .address-link {
         position: relative;
+        max-width: 260px;
       }
 
       .address {

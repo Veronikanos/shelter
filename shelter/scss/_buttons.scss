@@ -1,10 +1,11 @@
 .btn {
   display: inline-block;
-  padding: 15px 45px;
+  padding: 14px 45px;
   font-size: 17px;
   font-family: $main-font;
   font-weight: 400;
-  // line-height: calc(20 / 15);
+  line-height: calc(22 / 17);
+  letter-spacing: 0.06em;
   outline: none;
   background-color: $primary-color;
   border: 1px solid $primary-color;
