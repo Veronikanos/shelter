@@ -6,10 +6,12 @@
 @import './common';
 @import './buttons';
 
-@import './layout/header';
-@import './layout/not-only';
-@import './layout/about';
-@import './layout/our-friends';
-@import './layout/help';
-@import './layout/in-addition';
-@import './layout/footer';
+@import './layout/main/header';
+@import './layout/main/not-only';
+@import './layout/main/about';
+@import './layout/main/our-friends';
+@import './layout/main/help';
+@import './layout/main/in-addition';
+@import './layout/main/footer';
+
+@import './layout/pets/header';
