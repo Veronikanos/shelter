@@ -13,32 +13,6 @@
   &__slider {
     position: relative;
 
-    .prev,
-    .next {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background-color: transparent;
-      border: 2px solid $active-color;
-      outline: none;
-
-      cursor: pointer;
-    }
-
-    .prev {
-      left: 0;
-    }
-
-    .next {
-      right: 0;
-    }
-
     .icon {
       display: block;
       border-radius: 50%;
@@ -122,6 +96,11 @@
       transition: background-color $transition-duration
           $transition-timing-function,
         border-color $transition-duration $transition-timing-function;
+
+      &:hover {
+        background-color: $hover-btn;
+        border-color: $hover-btn;
+      }
 
       &:disabled {
         background-color: transparent;
