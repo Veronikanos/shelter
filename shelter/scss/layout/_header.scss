@@ -30,13 +30,11 @@ nav {
   .nav-item {
     padding: 46px 0;
     &__link {
-      // border-bottom: 3px solid transparent;
       position: relative;
       color: $light-btn-text;
       @extend %transition-color;
 
       &:active {
-        // border-bottom: 3px solid $active-color;
         color: $active-link;
       }
     }
@@ -44,6 +42,10 @@ nav {
     &__link:hover::after,
     &__link.disabled::after {
       opacity: 1;
+    }
+    &__link:hover,
+    &__link.disabled {
+      color: $active-link;
     }
 
     &__link::after {
@@ -55,13 +57,13 @@ nav {
       width: 100%;
       opacity: 0;
       transition: opacity $transition-duration
-        $transition-timing-function;
+          $transition-timing-function,
+        color $transition-duration $transition-timing-function;
     }
   }
 
   .nav-item.disabled {
     pointer-events: none;
-    // opacity: 0.5;
   }
 }
 h1 {

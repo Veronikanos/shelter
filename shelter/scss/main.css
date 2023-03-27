@@ -266,6 +266,9 @@ nav .nav-item__link:active {
 nav .nav-item__link:hover::after, nav .nav-item__link.disabled::after {
   opacity: 1;
 }
+nav .nav-item__link:hover, nav .nav-item__link.disabled {
+  color: #fafafa;
+}
 nav .nav-item__link::after {
   content: "";
   position: absolute;
@@ -274,7 +277,7 @@ nav .nav-item__link::after {
   height: 3px;
   width: 100%;
   opacity: 0;
-  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 nav .nav-item.disabled {
   pointer-events: none;
