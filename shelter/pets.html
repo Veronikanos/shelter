@@ -19,7 +19,7 @@
   <body>
     <header class="header pets-header">
       <div class="container">
-        <a class="logo" href=""
+        <a class="logo" href="./index.html"
           ><span>Cozy House</span>
           <h1>Shelter for pets in Boston</h1></a
         >
@@ -31,12 +31,12 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-item__link disabled" href="./pets.html">
+              <a class="nav-item__link disabled" href="">
                 Our pets
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-item__link" href="#help"
+              <a class="nav-item__link" href="./index.html#help"
                 >Help the shelter</a
               >
             </li>
@@ -48,84 +48,13 @@
       </div>
     </header>
     <main>
-      <!-- <section class="not-only hero">
-        <div class="container">
-          <div class="hero-wrapper">
-            <div class="hero-text">
-              <h2 class="hero-header">
-                Not only people need a house
-              </h2>
-              <p class="hero-description">
-                We offer to give a chance to a little and nice puppy
-                with an extremely wide and open heart. He or she will
-                love you more than anybody else in the world, you will
-                see!
-              </p>
-              <a class="btn hero-btn" href="#our-friends">
-                Make a friend
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="about">
-        <div class="container about-container">
-          <div class="wrapper">
-            <div class="about-image">
-              <img
-                src="./assets/images/about-pets.png"
-                alt="dog and cat" />
-            </div>
-            <div class="about-text">
-              <h3 class="about-header">
-                About the shelter “Cozy House”
-              </h3>
-              <p>
-                Currently we have 121 dogs and 342 cats on our hands
-                and statistics show that only 20% of them will find a
-                family. The others will continue to live with us and
-                will be waiting for a lucky chance to become dearly
-                loved.
-              </p>
-              <p>
-                We feed our wards with the best food and make sure
-                that they do not get sick, feel comfortable (including
-                psychologically) and well. We are supported by 87
-                volunteers and 28 employees of various skill levels.
-                About 12% of the animals are taken by the shelter
-                staff. Taking care of the animals, they become
-                attached to the pets and would hardly ever leave them
-                alone.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="our-friends" id="our-friends">
+      <section class="our-friends pets-page" id="our-friends">
         <div class="container our-friends-container">
           <h3 class="our-friends-header">
             Our friends who <br />
             are looking for a house
           </h3>
           <div class="our-friends__slider">
-            <button class="prev">
-              <svg
-                class="icon arrow-left"
-                width="14"
-                height="6"
-                viewBox="0 0 14 6">
-                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" />
-              </svg>
-            </button>
-            <button class="next">
-              <svg
-                class="icon arrow-right"
-                width="14"
-                height="6"
-                viewBox="0 0 14 6">
-                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" />
-              </svg>
-            </button>
             <ul class="our-friends-list">
               <li class="our-friends-item">
                 <div class="our-friends-image">
@@ -142,7 +71,7 @@
                 <div class="our-friends-image">
                   <img
                     src="./assets/images/pets/jennifer.png"
-                    alt="little white dog" />
+                    alt="little white dog labrador" />
                 </div>
                 <span class="pet-name">Jennifer</span
                 ><button class="btn transparent btn__learn-more">
@@ -153,115 +82,105 @@
                 <div class="our-friends-image">
                   <img
                     src="./assets/images/pets/woody.png"
-                    alt="big labrador" />
+                    alt="big golden retriever" />
                 </div>
                 <span class="pet-name">Woody</span
                 ><button class="btn transparent btn__learn-more">
                   Learn more
                 </button>
               </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/sophia.png"
+                    alt="small shih tzu dog" />
+                </div>
+                <span class="pet-name">Sophia</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/timmy.png"
+                    alt="light grey british shorthair cat" />
+                </div>
+                <span class="pet-name">Timmy</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/charly.png"
+                    alt="Jack Russel Terrier" />
+                </div>
+                <span class="pet-name">Charly</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/scarlett.png"
+                    alt="Jack Russel Terrier" />
+                </div>
+                <span class="pet-name">Scarlett</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/freddie.png"
+                    alt="British shorthair white and grey cat" />
+                </div>
+                <span class="pet-name">Freddie</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
             </ul>
           </div>
-          <div class="our-friends__button">
-            <a href="./pets.html" class="btn">Get to know the rest</a>
+          <div class="our-friends__pagination">
+            <button
+              disabled
+              class="btn pagination-btn pagination-btn__first">
+              <svg width="25" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-first"></use>
+              </svg>
+            </button>
+            <button
+              disabled
+              class="btn pagination-btn pagination-btn__prev">
+              <svg width="10" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-prev"></use>
+              </svg>
+            </button>
+            <button class="btn pagination-btn pagination-btn__active">
+              1
+            </button>
+            <button class="btn pagination-btn pagination-btn__next">
+              <svg width="10" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-next"></use>
+              </svg>
+            </button>
+            <button class="btn pagination-btn pagination-btn__last">
+              <svg width="25" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-last"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </section>
-      <section class="help" id="help">
-        <div class="container help-container">
-          <h3 class="help-header">
-            How you can help <br />
-            our shelter
-          </h3>
-          <ul class="help-list">
-            <li class="help-item">
-              <svg width="48" height="60">
-                <use href="./assets/icons/sprite.svg#pet-food"></use>
-              </svg>
-              <h4>Pet food</h4>
-            </li>
-            <li class="help-item">
-              <svg width="61" height="60">
-                <use
-                  href="./assets/icons/sprite.svg#transportation"></use>
-              </svg>
-              <h4>Transportation</h4>
-            </li>
-            <li class="help-item">
-              <svg width="60" height="60">
-                <use href="./assets/icons/sprite.svg#toys"></use>
-              </svg>
-              <h4>Toys</h4>
-            </li>
-            <li class="help-item">
-              <svg width="60" height="57">
-                <use
-                  href="./assets/icons/sprite.svg#bowls-and-cups"></use>
-              </svg>
-              <h4>Bowls and cups</h4>
-            </li>
-            <li class="help-item">
-              <svg width="32" height="60">
-                <use href="./assets/icons/sprite.svg#shampoos"></use>
-              </svg>
-              <h4>Shampoos</h4>
-            </li>
-            <li class="help-item">
-              <svg width="60" height="55">
-                <use href="./assets/icons/sprite.svg#vitamins"></use>
-              </svg>
-              <h4>Vitamins</h4>
-            </li>
-            <li class="help-item">
-              <svg width="60" height="60">
-                <use href="./assets/icons/sprite.svg#medicines"></use>
-              </svg>
-              <h4>Medicines</h4>
-            </li>
-            <li class="help-item">
-              <svg width="60" height="53">
-                <use
-                  href="./assets/icons/sprite.svg#collars-or-leashes"></use>
-              </svg>
-              <h4>Collars / leashes</h4>
-            </li>
-            <li class="help-item">
-              <svg width="57" height="60">
-                <use
-                  href="./assets/icons/sprite.svg#sleeping-area"></use>
-              </svg>
-              <h4>Sleeping areas</h4>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="in-addition">
-        <div class="container in-addition-container">
-          <div class="in-addition__image">
-            <img
-              src="./assets/images/donation-dog.png"
-              alt="red god laying" />
-          </div>
-          <div class="in-addition__text">
-            <h3 class="in-addition-header">
-              You can also make a donation
-            </h3>
-            <p class="name-of-bank">
-              Name of the bank / Type of bank account
-            </p>
-            <a class="card-number" href=""
-              ><h4>8380 2880 8028 8791 7435</h4></a
-            >
-            <p class="paragraph-s">
-              Legal information and lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Maecenas a ipsum at libero
-              sagittis dignissim sed ac diam. Praesent ultrices
-              maximus tortor et vulputate. Interdum et malesuada fames
-              ac ante ipsum primis in faucibus.
-            </p>
-          </div>
-        </div>
-      </section> -->
     </main>
     <footer id="contacts">
       <div class="footer-wrapper">

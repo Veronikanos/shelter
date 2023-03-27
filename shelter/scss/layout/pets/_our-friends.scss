@@ -1,4 +1,4 @@
-.our-friends {
+.our-friends.pets-page {
   background-color: $light-bg;
 
   .container {
@@ -26,16 +26,8 @@
       background-color: transparent;
       border: 2px solid $active-color;
       outline: none;
-      cursor: pointer;
-      transition: background-color $transition-duration
-          $transition-timing-function,
-        border-color $transition-duration $transition-timing-function;
-    }
 
-    .prev:hover,
-    .next:hover {
-      background-color: $hover-btn;
-      border-color: $hover-btn;
+      cursor: pointer;
     }
 
     .prev {
@@ -57,14 +49,15 @@
     }
   }
 
-  &-list {
+  .our-friends-list {
     width: 1200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 90px;
+    gap: 40px;
   }
 
-  &-item {
+  .our-friends-item {
     width: 270px;
     height: 100%;
     border-radius: 9px;
@@ -82,7 +75,7 @@
     }
   }
 
-  &-image {
+  .our-friends-image {
     width: 270px;
     height: 270px;
     overflow: hidden;
@@ -99,23 +92,62 @@
     margin-bottom: 30px;
   }
 
-  // .our-friends__btn {
-  //   transition: border-color $transition-duration
-  //     $transition-timing-function;
-  // }
-  .our-friends__btn:hover {
-    border-color: $hover-btn;
-  }
-
   .btn__learn-more {
     margin-bottom: 30px;
     transition: background-color $transition-duration
-        $transition-timing-function,
-      border-color $transition-duration $transition-timing-function;
+      $transition-timing-function;
 
     &:hover {
       background-color: $hover-btn;
-      border-color: $hover-btn;
+    }
+  }
+
+  .our-friends__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .pagination-btn {
+      padding: 0;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 0.06em;
+      border-width: 2px;
+      @extend %h4;
+      transition: background-color $transition-duration
+          $transition-timing-function,
+        border-color $transition-duration $transition-timing-function;
+
+      &:disabled {
+        background-color: transparent;
+        border: 2px solid $light-btn-text;
+        cursor: default;
+      }
+
+      &:disabled > svg {
+        fill: $light-btn-text;
+      }
+
+      &__active {
+        color: $dark-btn-text;
+        background-color: $active-color;
+        cursor: default;
+      }
+
+      &__next,
+      &__last,
+      &__prev,
+      &__first {
+        background-color: transparent;
+        border: 2px solid $primary-color;
+      }
+
+      .pagination-btn > svg {
+        fill: $dark-btn-text;
+      }
     }
   }
 }

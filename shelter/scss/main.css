@@ -104,7 +104,7 @@ h3 {
   color: #545454;
 }
 
-h4 {
+.our-friends.pets-page .our-friends__pagination .pagination-btn, h4 {
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.06em;
@@ -129,7 +129,7 @@ h5 {
   color: #b2b2b2;
 }
 
-.btn:disabled, .btn {
+.btn:disabled {
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -228,6 +228,7 @@ img {
   border: 1px solid #f1cdb3;
   border-radius: 100px;
   cursor: pointer;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn:hover, .btn:focus {
   background-color: #fddcc4;
@@ -384,6 +385,12 @@ nav .nav-item.disabled {
   border: 2px solid #f1cdb3;
   outline: none;
   cursor: pointer;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.our-friends__slider .prev:hover,
+.our-friends__slider .next:hover {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
 }
 .our-friends__slider .prev {
   left: 0;
@@ -432,12 +439,16 @@ nav .nav-item.disabled {
   letter-spacing: 0.06em;
   margin-bottom: 30px;
 }
+.our-friends .our-friends__btn:hover {
+  border-color: #fddcc4;
+}
 .our-friends .btn__learn-more {
   margin-bottom: 30px;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-friends .btn__learn-more:hover {
   background-color: #fddcc4;
+  border-color: #fddcc4;
 }
 
 .help-header {
@@ -655,4 +666,125 @@ footer address .right-side .address-link::before {
 }
 .pets-header nav .nav-item.disabled {
   pointer-events: none;
+}
+
+.our-friends.pets-page {
+  background-color: #f6f6f6;
+}
+.our-friends.pets-page .container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  text-align: center;
+}
+.our-friends.pets-page__slider {
+  position: relative;
+}
+.our-friends.pets-page__slider .prev,
+.our-friends.pets-page__slider .next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #f1cdb3;
+  outline: none;
+  cursor: pointer;
+}
+.our-friends.pets-page__slider .prev {
+  left: 0;
+}
+.our-friends.pets-page__slider .next {
+  right: 0;
+}
+.our-friends.pets-page__slider .icon {
+  display: block;
+  border-radius: 50%;
+  fill: #292929;
+}
+.our-friends.pets-page__slider .arrow-right {
+  transform: rotate(-180deg);
+}
+.our-friends.pets-page .our-friends-list {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.our-friends.pets-page .our-friends-item {
+  width: 270px;
+  height: 100%;
+  border-radius: 9px;
+  background-color: #fafafa;
+  box-shadow: none;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.our-friends.pets-page .our-friends-item:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.our-friends.pets-page .our-friends-image {
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.our-friends.pets-page .pet-name {
+  display: block;
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  margin-bottom: 30px;
+}
+.our-friends.pets-page .btn__learn-more {
+  margin-bottom: 30px;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.our-friends.pets-page .btn__learn-more:hover {
+  background-color: #fddcc4;
+}
+.our-friends.pets-page .our-friends__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.our-friends.pets-page .our-friends__pagination .pagination-btn {
+  padding: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.06em;
+  border-width: 2px;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.our-friends.pets-page .our-friends__pagination .pagination-btn:disabled {
+  background-color: transparent;
+  border: 2px solid #cdcdcd;
+  cursor: default;
+}
+.our-friends.pets-page .our-friends__pagination .pagination-btn:disabled > svg {
+  fill: #cdcdcd;
+}
+.our-friends.pets-page .our-friends__pagination .pagination-btn__active {
+  color: #292929;
+  background-color: #f1cdb3;
+  cursor: default;
+}
+.our-friends.pets-page .our-friends__pagination .pagination-btn__next, .our-friends.pets-page .our-friends__pagination .pagination-btn__last, .our-friends.pets-page .our-friends__pagination .pagination-btn__prev, .our-friends.pets-page .our-friends__pagination .pagination-btn__first {
+  background-color: transparent;
+  border: 2px solid #f1cdb3;
+}
+.our-friends.pets-page .our-friends__pagination .pagination-btn .pagination-btn > svg {
+  fill: #292929;
 }/*# sourceMappingURL=main.css.map */

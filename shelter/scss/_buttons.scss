@@ -19,7 +19,9 @@
   //   border: 2px solid $orange;
   // }
 
-  @extend %transition;
+  transition: color $transition-duration $transition-timing-function,
+    background-color $transition-duration $transition-timing-function,
+    border-color $transition-duration $transition-timing-function;
 
   &:hover,
   &:focus {
