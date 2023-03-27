@@ -30,15 +30,38 @@ nav {
   .nav-item {
     padding: 46px 0;
     &__link {
-      border-bottom: 3px solid transparent;
+      // border-bottom: 3px solid transparent;
+      position: relative;
       color: $light-btn-text;
       @extend %transition-color;
 
       &:active {
-        border-bottom: 3px solid $active-color;
+        // border-bottom: 3px solid $active-color;
         color: $active-link;
       }
     }
+
+    &__link:hover::after,
+    &__link.disabled::after {
+      opacity: 1;
+    }
+
+    &__link::after {
+      content: '';
+      position: absolute;
+      background-color: $active-color;
+      display: block;
+      height: 3px;
+      width: 100%;
+      opacity: 0;
+      transition: opacity $transition-duration
+        $transition-timing-function;
+    }
+  }
+
+  .nav-item.disabled {
+    pointer-events: none;
+    // opacity: 0.5;
   }
 }
 h1 {

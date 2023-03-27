@@ -121,11 +121,11 @@ h5 {
 }
 
 .btn:disabled, .btn {
-  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 nav .nav-item__link {
-  transition: color 300ms ease-in-out;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -257,12 +257,27 @@ nav .nav-item {
   padding: 46px 0;
 }
 nav .nav-item__link {
-  border-bottom: 3px solid transparent;
+  position: relative;
   color: #cdcdcd;
 }
 nav .nav-item__link:active {
-  border-bottom: 3px solid #f1cdb3;
   color: #fafafa;
+}
+nav .nav-item__link:hover::after, nav .nav-item__link.disabled::after {
+  opacity: 1;
+}
+nav .nav-item__link::after {
+  content: "";
+  position: absolute;
+  background-color: #f1cdb3;
+  display: block;
+  height: 3px;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+nav .nav-item.disabled {
+  pointer-events: none;
 }
 
 h1 {
@@ -374,7 +389,7 @@ section.hero {
   border-radius: 9px;
   background-color: #fafafa;
   box-shadow: none;
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 300ms ease-in-out;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-friends-item:hover {
   background-color: #ffffff;
@@ -397,7 +412,7 @@ section.hero {
 }
 .our-friends .btn__learn-more {
   margin-bottom: 30px;
-  transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-friends .btn__learn-more:hover {
   background-color: #fddcc4;
@@ -483,11 +498,19 @@ footer .footer-container {
 footer address {
   display: flex;
 }
-footer address h3 {
+footer address .address-headers-text {
+  font-size: 35px;
+  line-height: 1.2857142857;
+  letter-spacing: 0.06em;
+  font-weight: normal;
   font-style: normal;
   color: #ffffff;
 }
-footer address h4 {
+footer address .address-text {
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  font-weight: normal;
   font-style: normal;
   color: #f1cdb3;
 }

@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <title>Shelter</title>
-    <!-- <link rel="icon" href="favicon.ico" /> -->
+    <link rel="icon" href="./assets/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -26,12 +26,14 @@
         <nav class="nav nav-header">
           <ul class="nav-menu">
             <li class="nav-item">
-              <a class="nav-item__link" href="">About the shelter</a>
+              <a class="nav-item__link disabled" href=""
+                >About the shelter</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-item__link" href="#our-friends"
-                >Our pets</a
-              >
+              <a class="nav-item__link" href="#our-friends">
+                Our pets
+              </a>
             </li>
             <li class="nav-item">
               <a class="nav-item__link" href="">Help the shelter</a>
@@ -262,29 +264,35 @@
         <div class="footer-container">
           <address>
             <div class="left-side">
-              <h3>For questions and suggestions</h3>
+              <p class="address-headers-text">
+                For questions and suggestions
+              </p>
               <a class="email-link" href="mailto:jim@rock.com">
-                <h4 class="email">email@shelter.com</h4>
+                <p class="email address-text">email@shelter.com</p>
               </a>
               <a class="phone-link" href="tel:+13115552368">
-                <h4 class="phone">+13 674 567 75 54</h4>
+                <p class="phone address-text">+13 674 567 75 54</p>
               </a>
             </div>
             <div class="right-side">
-              <h3>We are waiting for your visit</h3>
+              <p class="address-headers-text">
+                We are waiting for your visit
+              </p>
               <a
                 class="address-link"
                 href="https://www.google.com/maps/search/1+Central+Street,+Boston/@42.3521667,-71.0652078,15z/data=!3m1!4b1"
                 target="_blank">
-                <h4 class="address">
+                <p class="address address-text">
                   1 Central Street, Boston (entrance from the store)
-                </h4>
+                </p>
               </a>
               <a
                 class="address-link"
                 href="https://www.google.com/maps/search/18+South+Park,+London/@51.5107255,-0.1600785,12z/data=!3m1!4b1"
                 target="_blank">
-                <h4 class="address">18 South Park, London</h4>
+                <p class="address address-text">
+                  18 South Park, London
+                </p>
               </a>
             </div>
           </address>

@@ -26,11 +26,20 @@ footer {
   address {
     display: flex;
 
-    h3 {
+    .address-headers-text {
+      font-size: 35px;
+      line-height: calc(45 / 35);
+      letter-spacing: 0.06em;
+      font-weight: normal;
       font-style: normal;
       color: $main-color;
     }
-    h4 {
+
+    .address-text {
+      font-size: 20px;
+      line-height: calc(23 / 20);
+      letter-spacing: 0.06em;
+      font-weight: normal;
       font-style: normal;
       color: $primary-color;
     }
