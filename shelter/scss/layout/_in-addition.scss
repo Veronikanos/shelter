@@ -32,8 +32,9 @@
     position: relative;
 
     & h4 {
-      text-indent: 45px;
-			color: $dark-headers-color;
+      position: relative;
+      left: 45px;
+      color: $dark-headers-color;
     }
   }
 
@@ -41,8 +42,8 @@
     position: absolute;
     content: url(../assets/icons/credit-card.svg);
     height: 23px;
-    top: 0;
+    top: 50%;
     left: 0;
-    transform: translate(50%, 50%);
+    transform: translate(50%, -50%);
   }
 }

@@ -451,14 +451,95 @@ section.hero {
   position: relative;
 }
 .in-addition .card-number h4 {
-  text-indent: 45px;
+  position: relative;
+  left: 45px;
   color: #545454;
 }
 .in-addition .card-number::before {
   position: absolute;
   content: url(../assets/icons/credit-card.svg);
   height: 23px;
-  top: 0;
+  top: 50%;
   left: 0;
-  transform: translate(50%, 50%);
+  transform: translate(50%, -50%);
+}
+
+footer {
+  background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+}
+footer .footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 0;
+}
+footer .footer-container {
+  background-image: url("../assets/images/footer-puppy.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  background-size: 300px;
+  height: 310px;
+}
+footer address {
+  display: flex;
+}
+footer address h3 {
+  font-style: normal;
+  color: #ffffff;
+}
+footer address h4 {
+  font-style: normal;
+  color: #f1cdb3;
+}
+footer address .left-side {
+  width: 33.3333333333%;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+footer address .left-side .email-link,
+footer address .left-side .phone-link {
+  position: relative;
+}
+footer address .left-side .email,
+footer address .left-side .phone {
+  position: relative;
+  left: 60px;
+}
+footer address .left-side .email-link::before {
+  position: absolute;
+  content: url(../assets/icons/mail.svg);
+  top: 50%;
+  left: 0;
+  height: 26px;
+  transform: translateY(-50%);
+}
+footer address .left-side .phone-link::before {
+  position: absolute;
+  content: url(../assets/icons/phone.svg);
+  top: 50%;
+  left: 0;
+  height: 32px;
+  transform: translateY(-50%);
+}
+footer address .right-side {
+  width: 33.3333333333%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer address .right-side .address-link {
+  position: relative;
+}
+footer address .right-side .address {
+  position: relative;
+  left: 42px;
+}
+footer address .right-side .address-link::before {
+  position: absolute;
+  content: url(../assets/icons/pin.svg);
+  top: 50%;
+  left: 0;
+  height: 32px;
+  transform: translateY(-50%);
 }/*# sourceMappingURL=main.css.map */

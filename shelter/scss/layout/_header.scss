@@ -30,7 +30,6 @@ nav {
   .nav-item {
     padding: 46px 0;
     &__link {
-      // padding: 46px 0;
       border-bottom: 3px solid transparent;
       color: $light-btn-text;
       @extend %transition-color;
@@ -48,8 +47,4 @@ h1 {
   font-size: 13px;
   line-height: 14.95px;
   letter-spacing: 0.06em;
-  // color: $main-color;
-
-  // Align: Left
-  // Vertical align: Center
 }
