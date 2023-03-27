@@ -212,6 +212,7 @@ a {
 
 img {
   display: block;
+  max-width: 100%;
   height: auto;
 }
 
@@ -345,12 +346,13 @@ nav .nav-item.disabled {
   padding-right: 175px;
 }
 .about-image {
-  width: 100%;
+  max-width: 100%;
 }
 .about-header {
   width: 370px;
 }
 .about-text {
+  width: 430px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -429,6 +431,7 @@ nav .nav-item.disabled {
   height: 270px;
   overflow: hidden;
   margin-bottom: 30px;
+  border-radius: 9px 9px 0px 0px;
 }
 .our-friends .pet-name {
   display: block;
@@ -484,6 +487,7 @@ nav .nav-item.disabled {
   max-width: 300px;
 }
 .in-addition__text {
+  width: 380px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -670,6 +674,7 @@ footer address .right-side .address-link::before {
 
 .our-friends.pets-page {
   background-color: #f6f6f6;
+  padding-top: 85px;
 }
 .our-friends.pets-page .container {
   display: flex;
@@ -716,7 +721,7 @@ footer address .right-side .address-link::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 30px 40px;
 }
 .our-friends.pets-page .our-friends-item {
   width: 270px;
@@ -735,6 +740,7 @@ footer address .right-side .address-link::before {
   height: 270px;
   overflow: hidden;
   margin-bottom: 30px;
+  border-radius: 9px 9px 0px 0px;
 }
 .our-friends.pets-page .pet-name {
   display: block;

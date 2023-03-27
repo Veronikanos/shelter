@@ -87,6 +87,7 @@
     height: 270px;
     overflow: hidden;
     margin-bottom: 30px;
+    border-radius: 9px 9px 0px 0px;
   }
 
   .pet-name {
@@ -99,10 +100,6 @@
     margin-bottom: 30px;
   }
 
-  // .our-friends__btn {
-  //   transition: border-color $transition-duration
-  //     $transition-timing-function;
-  // }
   .our-friends__btn:hover {
     border-color: $hover-btn;
   }

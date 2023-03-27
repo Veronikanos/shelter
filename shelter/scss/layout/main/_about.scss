@@ -6,12 +6,13 @@
     padding-right: 175px;
   }
   &-image {
-    width: 100%;
+    max-width: 100%;
   }
   &-header {
     width: 370px;
   }
   &-text {
+    width: 430px;
     display: flex;
     flex-direction: column;
     gap: 25px;

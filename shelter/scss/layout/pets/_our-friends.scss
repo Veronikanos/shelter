@@ -1,5 +1,6 @@
 .our-friends.pets-page {
   background-color: $light-bg;
+  padding-top: 85px;
 
   .container {
     display: flex;
@@ -54,7 +55,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 30px 40px;
   }
 
   .our-friends-item {
@@ -80,6 +81,7 @@
     height: 270px;
     overflow: hidden;
     margin-bottom: 30px;
+    border-radius: 9px 9px 0px 0px;
   }
 
   .pet-name {
