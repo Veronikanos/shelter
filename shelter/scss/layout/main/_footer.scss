@@ -1,0 +1,105 @@
+footer {
+  background: url(noise_lines_transparent@2X.png),
+    radial-gradient(
+      110.67% 538.64% at 5.73% 50%,
+      #513d2f 0%,
+      #1a1a1c 100%
+    ),
+    #211f20;
+
+  .footer-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 40px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  address {
+    height: fit-content;
+    margin-top: 16px;
+    width: 73%;
+    display: flex;
+    justify-content: space-between;
+
+    .address-headers-text {
+      max-width: 280px;
+      font-size: 35px;
+      line-height: calc(45 / 35);
+      letter-spacing: 0.06em;
+      font-weight: normal;
+      font-style: normal;
+      color: $main-color;
+    }
+
+    .address-text {
+      // max-width: 260px;
+      font-size: 20px;
+      line-height: calc(23 / 20);
+      letter-spacing: 0.06em;
+      font-weight: normal;
+      font-style: normal;
+      color: $primary-color;
+    }
+
+    .left-side {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 46px;
+
+      .email-link,
+      .phone-link {
+        position: relative;
+      }
+
+      .email,
+      .phone {
+        position: relative;
+        left: 60px;
+      }
+
+      .email-link::before {
+        position: absolute;
+        content: url(../assets/icons/mail.svg);
+        top: 50%;
+        left: 0;
+        height: 26px;
+        transform: translateY(-50%);
+      }
+      .phone-link::before {
+        position: absolute;
+        content: url(../assets/icons/phone.svg);
+        top: 50%;
+        left: 0;
+        height: 32px;
+        transform: translateY(-50%);
+      }
+    }
+    .right-side {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .address-link {
+        position: relative;
+        max-width: 260px;
+      }
+
+      .address {
+        position: relative;
+        left: 42px;
+      }
+
+      .address-link::before {
+        position: absolute;
+        content: url(../assets/icons/pin.svg);
+        top: 50%;
+        left: 0;
+        height: 32px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

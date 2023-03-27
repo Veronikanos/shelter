@@ -1,0 +1,21 @@
+.about {
+  .wrapper {
+    display: flex;
+    gap: 120px;
+    padding-left: 175px;
+    padding-right: 175px;
+  }
+  &-image {
+    max-width: 100%;
+  }
+  &-header {
+    width: 370px;
+  }
+  &-text {
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+  }
+}

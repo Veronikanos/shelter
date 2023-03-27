@@ -1,0 +1,18 @@
+@import './utils/fonts';
+@import './utils/variables';
+@import './utils/placeholders';
+@import './utils/mixins';
+
+@import './common';
+@import './buttons';
+
+@import './layout/main/header';
+@import './layout/main/not-only';
+@import './layout/main/about';
+@import './layout/main/our-friends';
+@import './layout/main/help';
+@import './layout/main/in-addition';
+@import './layout/main/footer';
+
+@import './layout/pets/header';
+@import './layout/pets/our-friends';

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Pets page</title>
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./scss/main.css" />
+  </head>
+  <body>
+    <header class="header pets-header">
+      <div class="container">
+        <a class="logo" href="./index.html"
+          ><span>Cozy House</span>
+          <h1>Shelter for pets in Boston</h1></a
+        >
+        <nav class="nav nav-header">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a class="nav-item__link" href="./index.html"
+                >About the shelter</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-item__link disabled" href="">
+                Our pets
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item__link" href="./index.html#help"
+                >Help the shelter</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-item__link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="our-friends pets-page" id="our-friends">
+        <div class="container our-friends-container">
+          <h3 class="our-friends-header">
+            Our friends who <br />
+            are looking for a house
+          </h3>
+          <div class="our-friends__slider">
+            <ul class="our-friends-list">
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/katrine.png"
+                    alt="grey cat" />
+                </div>
+                <span class="pet-name">Katrine</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/jennifer.png"
+                    alt="little white dog labrador" />
+                </div>
+                <span class="pet-name">Jennifer</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/woody.png"
+                    alt="big golden retriever" />
+                </div>
+                <span class="pet-name">Woody</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/sophia.png"
+                    alt="small shih tzu dog" />
+                </div>
+                <span class="pet-name">Sophia</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/timmy.png"
+                    alt="light grey british shorthair cat" />
+                </div>
+                <span class="pet-name">Timmy</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/charly.png"
+                    alt="Jack Russel Terrier" />
+                </div>
+                <span class="pet-name">Charly</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/scarlett.png"
+                    alt="Jack Russel Terrier" />
+                </div>
+                <span class="pet-name">Scarlett</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+              <li class="our-friends-item">
+                <div class="our-friends-image">
+                  <img
+                    src="./assets/images/pets/freddie.png"
+                    alt="British shorthair white and grey cat" />
+                </div>
+                <span class="pet-name">Freddie</span
+                ><button class="btn transparent btn__learn-more">
+                  Learn more
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="our-friends__pagination">
+            <button
+              disabled
+              class="btn pagination-btn pagination-btn__first">
+              <svg width="25" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-first"></use>
+              </svg>
+            </button>
+            <button
+              disabled
+              class="btn pagination-btn pagination-btn__prev">
+              <svg width="10" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-prev"></use>
+              </svg>
+            </button>
+            <button class="btn pagination-btn pagination-btn__active">
+              1
+            </button>
+            <button class="btn pagination-btn pagination-btn__next">
+              <svg width="10" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-next"></use>
+              </svg>
+            </button>
+            <button class="btn pagination-btn pagination-btn__last">
+              <svg width="25" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-last"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="contacts">
+      <div class="footer-wrapper">
+        <address>
+          <div class="left-side">
+            <p class="address-headers-text">
+              For questions and suggestions
+            </p>
+            <a class="email-link" href="mailto:jim@rock.com">
+              <p class="email address-text">email@shelter.com</p>
+            </a>
+            <a class="phone-link" href="tel:+13115552368">
+              <p class="phone address-text">+13 674 567 75 54</p>
+            </a>
+          </div>
+          <div class="right-side">
+            <p class="address-headers-text">
+              We are waiting for your visit
+            </p>
+            <a
+              class="address-link"
+              href="https://www.google.com/maps/search/1+Central+Street,+Boston/@42.3521667,-71.0652078,15z/data=!3m1!4b1"
+              target="_blank">
+              <p class="address address-text">
+                1 Central Street, Boston (entrance from the store)
+              </p>
+            </a>
+            <a
+              class="address-link"
+              href="https://www.google.com/maps/search/18+South+Park,+London/@51.5107255,-0.1600785,12z/data=!3m1!4b1"
+              target="_blank">
+              <p class="address address-text">
+                18 South Park, London
+              </p>
+            </a>
+          </div>
+        </address>
+        <div class="footer-image">
+          <img
+            src="./assets/images/footer-puppy.png"
+            alt="puppy licks screen" />
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>

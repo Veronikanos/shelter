@@ -1,0 +1,25 @@
+.help {
+  // &-container {
+  //   display: flex;
+  //   justify-content: center;
+  // }
+
+  &-header {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 58px;
+    column-gap: 120px;
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
