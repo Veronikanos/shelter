@@ -487,6 +487,9 @@ nav .nav-item.disabled {
   padding-left: 0;
   padding-right: 0;
 }
+.in-addition__image {
+  margin-top: 11px;
+}
 .in-addition-header {
   max-width: 300px;
 }
@@ -502,10 +505,11 @@ nav .nav-item.disabled {
 }
 .in-addition .card-number {
   width: 350px;
+  position: relative;
   padding: 10px 15px;
   background: #f1cdb3;
   border-radius: 9px;
-  position: relative;
+  margin-bottom: 6px;
 }
 .in-addition .card-number h4 {
   position: relative;
