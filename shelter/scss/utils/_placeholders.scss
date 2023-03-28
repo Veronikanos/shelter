@@ -27,6 +27,10 @@
   color: $dark-headers-color;
 }
 
+p {
+  font-family: $secondary-font;
+}
+
 %small-additional-text {
   font-family: $secondary-font;
   font-style: italic;

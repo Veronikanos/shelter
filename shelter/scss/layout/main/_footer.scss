@@ -13,6 +13,7 @@ footer {
     padding: 40px 40px 0;
     display: flex;
     justify-content: space-between;
+    // font-family: 'Georgia';
   }
 
   address {
@@ -24,6 +25,7 @@ footer {
 
     .address-headers-text {
       max-width: 280px;
+      font-family: $main-font;
       font-size: 35px;
       line-height: calc(45 / 35);
       letter-spacing: 0.06em;
@@ -34,6 +36,7 @@ footer {
 
     .address-text {
       // max-width: 260px;
+      font-family: $main-font;
       font-size: 20px;
       line-height: calc(23 / 20);
       letter-spacing: 0.06em;

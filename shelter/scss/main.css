@@ -120,6 +120,10 @@ h5 {
   color: #545454;
 }
 
+p {
+  font-family: "Arial";
+}
+
 .in-addition .paragraph-s {
   font-family: "Arial";
   font-style: italic;
@@ -536,6 +540,7 @@ footer address {
 }
 footer address .address-headers-text {
   max-width: 280px;
+  font-family: "Georgia";
   font-size: 35px;
   line-height: 1.2857142857;
   letter-spacing: 0.06em;
@@ -544,6 +549,7 @@ footer address .address-headers-text {
   color: #ffffff;
 }
 footer address .address-text {
+  font-family: "Georgia";
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.06em;
