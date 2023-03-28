@@ -9,6 +9,10 @@
     padding-right: 0;
   }
 
+  &__image {
+    margin-top: 11px;
+  }
+
   &-header {
     max-width: 300px;
   }
@@ -27,10 +31,11 @@
 
   .card-number {
     width: 350px;
+    position: relative;
     padding: 10px 15px;
     background: $primary-color;
     border-radius: 9px;
-    position: relative;
+    margin-bottom: 6px;
 
     & h4 {
       position: relative;
