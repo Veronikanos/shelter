@@ -105,6 +105,7 @@
       &:disabled {
         background-color: transparent;
         border: 2px solid $light-btn-text;
+        pointer-events: none;
         cursor: default;
       }
 
@@ -115,6 +116,7 @@
       &__active {
         color: $dark-btn-text;
         background-color: $active-color;
+        pointer-events: none;
         cursor: default;
       }
 

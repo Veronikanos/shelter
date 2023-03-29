@@ -36,12 +36,18 @@
     background: $primary-color;
     border-radius: 9px;
     margin-bottom: 6px;
+    transition: background-color $transition-duration
+      $transition-timing-function;
 
     & h4 {
       position: relative;
       left: 45px;
       color: $dark-headers-color;
     }
+  }
+
+  .card-number:hover {
+    background-color: $hover-btn;
   }
 
   .paragraph-s {

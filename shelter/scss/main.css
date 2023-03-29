@@ -137,7 +137,7 @@ p {
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pets-header nav .nav-item__link, nav .nav-item__link {
+.pets-header nav .nav-item__link, .pets-header .logo h1, .pets-header .logo, footer address a p, nav .nav-item__link, .logo h1, .logo {
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -220,6 +220,10 @@ img {
   height: auto;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 .btn {
   display: inline-block;
   padding: 14px 45px;
@@ -267,16 +271,23 @@ header {
   color: #f1cdb3;
   letter-spacing: 0.06em;
 }
+.logo:hover {
+  color: #f6f6f6;
+}
 .logo span {
   display: inline-block;
   margin-bottom: 10px;
 }
 .logo h1 {
   font-family: "Arial";
+  color: #ffffff;
   font-weight: 400;
   font-size: 13px;
   line-height: 1.1538461538;
   letter-spacing: 0.1em;
+}
+.logo h1:hover {
+  color: #f1cdb3;
 }
 
 nav {
@@ -510,11 +521,15 @@ nav .nav-item.disabled {
   background: #f1cdb3;
   border-radius: 9px;
   margin-bottom: 6px;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .in-addition .card-number h4 {
   position: relative;
   left: 45px;
   color: #545454;
+}
+.in-addition .card-number:hover {
+  background-color: #fddcc4;
 }
 .in-addition .card-number::before {
   position: absolute;
@@ -541,6 +556,9 @@ footer address {
   width: 73%;
   display: flex;
   justify-content: space-between;
+}
+footer address a:hover p {
+  color: #fafafa;
 }
 footer address .address-headers-text {
   max-width: 280px;
@@ -645,6 +663,12 @@ footer address .right-side .address-link::before {
   line-height: 1.1538461538;
   letter-spacing: 0.1em;
 }
+.pets-header .logo h1:hover {
+  color: #f1cdb3;
+}
+.pets-header .logo:hover {
+  color: #f1cdb3;
+}
 .pets-header nav {
   font-family: "Arial";
 }
@@ -677,9 +701,6 @@ footer address .right-side .address-link::before {
   width: 100%;
   opacity: 0;
   transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.pets-header nav .nav-item.disabled {
-  pointer-events: none;
 }
 
 .our-friends.pets-page {
@@ -769,6 +790,7 @@ footer address .right-side .address-link::before {
 .our-friends.pets-page .our-friends__pagination .pagination-btn:disabled {
   background-color: transparent;
   border: 2px solid #cdcdcd;
+  pointer-events: none;
   cursor: default;
 }
 .our-friends.pets-page .our-friends__pagination .pagination-btn:disabled > svg {
@@ -777,6 +799,7 @@ footer address .right-side .address-link::before {
 .our-friends.pets-page .our-friends__pagination .pagination-btn__active {
   color: #292929;
   background-color: #f1cdb3;
+  pointer-events: none;
   cursor: default;
 }
 .our-friends.pets-page .our-friends__pagination .pagination-btn__next, .our-friends.pets-page .our-friends__pagination .pagination-btn__last, .our-friends.pets-page .our-friends__pagination .pagination-btn__prev, .our-friends.pets-page .our-friends__pagination .pagination-btn__first {

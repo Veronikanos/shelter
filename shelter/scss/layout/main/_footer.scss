@@ -23,6 +23,14 @@ footer {
     display: flex;
     justify-content: space-between;
 
+    a p {
+      @extend %transition-color;
+    }
+
+    a:hover p {
+      color: $active-link;
+    }
+
     .address-headers-text {
       max-width: 280px;
       font-family: $main-font;

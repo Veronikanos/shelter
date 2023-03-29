@@ -109,3 +109,7 @@ h4 {
 h5 {
   @extend %h5;
 }
+
+.disabled{
+	pointer-events: none;
+}
