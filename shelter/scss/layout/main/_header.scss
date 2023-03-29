@@ -21,6 +21,11 @@ header {
   line-height: calc(35 / 32);
   color: $primary-color;
   letter-spacing: 0.06em;
+  @extend %transition-color;
+
+  &:hover {
+    color: $light-bg;
+  }
 
   span {
     display: inline-block;
@@ -29,10 +34,15 @@ header {
 
   h1 {
     font-family: $secondary-font;
+    color: $main-color;
     font-weight: 400;
     font-size: 13px;
     line-height: calc(15 / 13);
     letter-spacing: 0.1em;
+    @extend %transition-color;
+    &:hover {
+      color: $active-color;
+    }
   }
 }
 
@@ -63,6 +73,7 @@ nav {
     &__link.disabled {
       color: $active-link;
     }
+
 
     &__link::after {
       content: '';
