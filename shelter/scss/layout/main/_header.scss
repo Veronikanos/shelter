@@ -17,6 +17,7 @@ header {
 }
 
 .logo {
+  padding-top: 30px;
   font-size: 3.2rem;
   line-height: calc(35 / 32);
   color: $primary-color;
@@ -50,6 +51,7 @@ header {
 }
 
 nav {
+  display: none;
   font-family: $secondary-font;
 
   .nav-menu {

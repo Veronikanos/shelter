@@ -1,8 +1,14 @@
 %h2 {
-  font-size: 4.4rem;
-  line-height: calc(57 / 44);
+  font-size: 2.5rem;
+  line-height: calc(32 / 25);
   font-weight: normal;
+  letter-spacing: 0.06em;
   color: $dark-headers-color;
+  @media screen and (min-width: $tablet) {
+    font-size: 4.4rem;
+    line-height: calc(57 / 44);
+    letter-spacing: 0;
+  }
 }
 
 %h3 {

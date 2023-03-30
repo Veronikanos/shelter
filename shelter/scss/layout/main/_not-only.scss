@@ -17,14 +17,17 @@
   }
 
   &-text {
-    width: 460px;
-    padding-top: 343px;
+    width: 300px;
+    padding-top: 150px;
+    @media screen and (min-width: $tablet) {
+      width: 460px;
+      padding-top: 343px;
+    }
   }
 
   &-header {
-    max-width: 310px;
-    margin-bottom: 42px;
     color: $main-color;
+    margin-bottom: 42px;
   }
 
   &-description {

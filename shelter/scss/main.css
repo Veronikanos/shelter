@@ -90,10 +90,18 @@
   font-display: swap;
 }
 h2 {
-  font-size: 4.4rem;
-  line-height: 1.2954545455;
+  font-size: 2.5rem;
+  line-height: 1.28;
   font-weight: normal;
+  letter-spacing: 0.06em;
   color: #545454;
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 4.4rem;
+    line-height: 1.2954545455;
+    letter-spacing: 0;
+  }
 }
 
 h3 {
@@ -188,10 +196,23 @@ section {
 }
 
 .container {
-  max-width: 1280px;
+  min-width: 320px;
+  padding-right: 10px;
+  padding-left: 10px;
   margin: 0 auto;
-  padding-right: 40px;
-  padding-left: 40px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1280px;
+    padding-right: 40px;
+    padding-left: 40px;
+    text-align: start;
+  }
+}
+.container-mobile {
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 ul {
@@ -267,6 +288,7 @@ header {
 }
 
 .logo {
+  padding-top: 30px;
   font-size: 3.2rem;
   line-height: 1.09375;
   color: #f1cdb3;
@@ -294,6 +316,7 @@ header {
 }
 
 nav {
+  display: none;
   font-family: "Arial";
 }
 nav .nav-menu {
@@ -344,13 +367,18 @@ nav .nav-item.disabled {
   height: 908px;
 }
 .hero-text {
-  width: 460px;
-  padding-top: 343px;
+  width: 300px;
+  padding-top: 150px;
+}
+@media screen and (min-width: 768px) {
+  .hero-text {
+    width: 460px;
+    padding-top: 343px;
+  }
 }
 .hero-header {
-  max-width: 310px;
-  margin-bottom: 42px;
   color: #ffffff;
+  margin-bottom: 42px;
 }
 .hero-description {
   margin-bottom: 42px;
