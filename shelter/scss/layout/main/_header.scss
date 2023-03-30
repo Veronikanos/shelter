@@ -17,7 +17,7 @@ header {
 }
 
 .logo {
-  font-size: 32px;
+  font-size: 3.2rem;
   line-height: calc(35 / 32);
   color: $primary-color;
   letter-spacing: 0.06em;
@@ -27,22 +27,25 @@ header {
     color: $light-bg;
   }
 
-  span {
+  .logo-name {
     display: inline-block;
     margin-bottom: 10px;
   }
 
-  h1 {
+  .header-name {
     font-family: $secondary-font;
-    color: $main-color;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 1.3rem;
     line-height: calc(15 / 13);
     letter-spacing: 0.1em;
     @extend %transition-color;
     &:hover {
       color: $active-color;
     }
+  }
+
+  .header-name__main {
+    color: $main-color;
   }
 }
 
@@ -73,7 +76,6 @@ nav {
     &__link.disabled {
       color: $active-link;
     }
-
 
     &__link::after {
       content: '';

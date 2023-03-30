@@ -1,26 +1,26 @@
 %h2 {
-  font-size: 44px;
+  font-size: 4.4rem;
   line-height: calc(57 / 44);
   font-weight: normal;
   color: $dark-headers-color;
 }
 
 %h3 {
-  font-size: 35px;
+  font-size: 3.5rem;
   line-height: calc(45 / 35);
   letter-spacing: 0.06em;
   font-weight: normal;
   color: $dark-headers-color;
 }
 %h4 {
-  font-size: 20px;
+  font-size: 2rem;
   line-height: calc(23 / 20);
   letter-spacing: 0.06em;
   font-weight: normal;
   color: $dark-headers-color;
 }
 %h5 {
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: calc(17 / 15);
   letter-spacing: 0.06em;
   font-weight: normal;
@@ -35,7 +35,7 @@ p {
   font-family: $secondary-font;
   font-style: italic;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 1.2rem;
   line-height: calc(18 / 12);
   color: #b2b2b2;
 }
