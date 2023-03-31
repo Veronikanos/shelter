@@ -24,6 +24,10 @@ header {
   letter-spacing: 0.06em;
   @extend %transition-color;
 
+  @media screen and (min-width: $desktop) {
+    padding-top: 0;
+  }
+
   &:hover {
     color: $light-bg;
   }
@@ -53,6 +57,10 @@ header {
 nav {
   display: none;
   font-family: $secondary-font;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
 
   .nav-menu {
     display: flex;
