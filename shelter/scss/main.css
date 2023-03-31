@@ -305,7 +305,8 @@ header {
 }
 
 .logo {
-  padding-top: 30px;
+  padding-bottom: 32px;
+  padding-top: 32px;
   font-size: 3.2rem;
   line-height: 1.09375;
   color: #f1cdb3;
@@ -341,7 +342,7 @@ nav {
   display: none;
   font-family: "Arial";
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
   nav {
     display: block;
   }
@@ -378,6 +379,18 @@ nav .nav-item__link::after {
 }
 nav .nav-item.disabled {
   pointer-events: none;
+}
+
+.nav-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+@media screen and (min-width: 768px) {
+  .nav-button {
+    display: none;
+  }
 }
 
 .hero {

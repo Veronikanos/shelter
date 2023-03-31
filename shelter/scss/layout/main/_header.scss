@@ -17,7 +17,8 @@ header {
 }
 
 .logo {
-  padding-top: 30px;
+  padding-bottom: 32px;
+  padding-top: 32px;
   font-size: 3.2rem;
   line-height: calc(35 / 32);
   color: $primary-color;
@@ -58,7 +59,7 @@ nav {
   display: none;
   font-family: $secondary-font;
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $tablet) {
     display: block;
   }
 
@@ -103,5 +104,14 @@ nav {
 
   .nav-item.disabled {
     pointer-events: none;
+  }
+}
+.nav-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  @media screen and (min-width: $tablet) {
+    display: none;
   }
 }
