@@ -763,10 +763,14 @@ nav .nav-item.disabled {
 }
 @media screen and (min-width: 1280px) {
   .help-list {
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    grid-column-gap: 119px;
   }
 }
 .help-item {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;

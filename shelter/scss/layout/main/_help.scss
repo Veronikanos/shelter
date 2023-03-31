@@ -54,12 +54,17 @@
       // column-gap: 120px;
     }
     @media screen and (min-width: $desktop) {
-      grid-template-columns: repeat(5, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-items: center;
+      grid-column-gap: 119px;
+      // padding: 0 127px;
+      // grid-template-columns: repeat(5, 1fr);
     }
   }
 
   &-item {
-    // width: 130px;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,6 +73,9 @@
     @media screen and (min-width: $tablet) {
       gap: 30px;
     }
+    // @media screen and (min-width: $desktop) {
+    //   width: fit-content;
+    // }
 
     &:last-of-type {
       align-self: flex-start;
