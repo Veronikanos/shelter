@@ -119,11 +119,17 @@ h3 {
 }
 
 .our-friends.pets-page .our-friends__pagination .pagination-btn, h4 {
-  font-size: 2rem;
-  line-height: 1.15;
+  font-size: 1.5rem;
+  line-height: 1.1333333333;
   letter-spacing: 0.06em;
   font-weight: normal;
   color: #545454;
+}
+@media screen and (min-width: 768px) {
+  .our-friends.pets-page .our-friends__pagination .pagination-btn, h4 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
 }
 
 h5 {
@@ -706,23 +712,82 @@ nav .nav-item.disabled {
   border-color: #fddcc4;
 }
 
+.help-container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media screen and (min-width: 768px) {
+  .help-container {
+    padding-right: 69px;
+    padding-left: 69px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .help-container {
+    padding-right: 127px;
+    padding-left: 127px;
+  }
+}
 .help-header {
-  margin-bottom: 60px;
+  margin-bottom: 42px;
   text-align: center;
 }
-.help-list {
+@media screen and (min-width: 768px) {
+  .help-header {
+    margin-bottom: 60px;
+  }
+}
+.help-wrapper {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  row-gap: 58px;
-  column-gap: 120px;
+}
+.help-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  justify-content: center;
+  justify-items: center;
+  white-space: nowrap;
+}
+@media screen and (min-width: 450px) {
+  .help-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 768px) {
+  .help-list {
+    grid-row-gap: 55px;
+    grid-column-gap: 65px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .help-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 .help-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .help-item {
+    gap: 30px;
+  }
+}
+.help-item:last-of-type {
+  align-self: flex-start;
+}
+.help-item svg {
+  height: 50px;
+}
+@media screen and (min-width: 768px) {
+  .help-item svg {
+    height: 60px;
+  }
 }
 
 .in-addition {
