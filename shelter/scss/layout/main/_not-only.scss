@@ -64,7 +64,7 @@
       margin-left: auto;
       max-width: 87%;
       @media screen and (min-width: $tablet) {
-        max-width: 80%;
+        max-width: 80.5%;
       }
       @media screen and (min-width: $desktop) {
         max-width: 100%;
@@ -121,5 +121,9 @@
   &-description {
     margin-bottom: 42px;
     color: $light-btn-text;
+    text-align: center;
+    @media screen and (min-width: $tablet) {
+      text-align: left;
+    }
   }
 }

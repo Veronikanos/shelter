@@ -105,11 +105,17 @@ h2 {
 }
 
 h3 {
-  font-size: 3.5rem;
-  line-height: 1.2857142857;
+  font-size: 2.5rem;
+  line-height: 1.28;
   letter-spacing: 0.06em;
   font-weight: normal;
   color: #545454;
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 3.5rem;
+    line-height: 1.2857142857;
+  }
 }
 
 .our-friends.pets-page .our-friends__pagination .pagination-btn, h4 {
@@ -129,7 +135,13 @@ h5 {
 }
 
 p {
+  text-align: justify;
   font-family: "Arial";
+}
+@media screen and (min-width: 768px) {
+  p {
+    text-align: left;
+  }
 }
 
 .in-addition .paragraph-s {
@@ -191,8 +203,14 @@ body.noscroll {
 }
 
 section {
-  padding-top: 80px;
-  padding-bottom: 100px;
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+@media screen and (min-width: 768px) {
+  section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
 }
 
 .container {
@@ -458,7 +476,7 @@ nav .nav-item.disabled {
 }
 @media screen and (min-width: 768px) {
   .hero .bg-image-wrapper img {
-    max-width: 80%;
+    max-width: 80.5%;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -493,26 +511,62 @@ nav .nav-item.disabled {
 .hero-description {
   margin-bottom: 42px;
   color: #cdcdcd;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .hero-description {
+    text-align: left;
+  }
 }
 
 .about .wrapper {
   display: flex;
-  gap: 120px;
-  padding-left: 175px;
-  padding-right: 175px;
+  flex-direction: column-reverse;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 40px;
+}
+@media screen and (min-width: 768px) {
+  .about .wrapper {
+    padding-left: 159px;
+    padding-right: 159px;
+    gap: 80px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about .wrapper {
+    flex-direction: row;
+    padding-left: 175px;
+    padding-right: 175px;
+    gap: 120px;
+  }
 }
 .about-image {
   max-width: 100%;
+  padding: 0 5px;
+  margin: 0 auto;
 }
-.about-header {
-  width: 370px;
+@media screen and (min-width: 768px) {
+  .about-image {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about-header {
+    width: 370px;
+  }
 }
 .about-text {
-  width: 430px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 24px;
   justify-content: center;
+}
+@media screen and (min-width: 1280px) {
+  .about-text {
+    width: 430px;
+  }
 }
 
 .our-friends {

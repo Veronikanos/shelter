@@ -12,12 +12,17 @@
 }
 
 %h3 {
-  font-size: 3.5rem;
-  line-height: calc(45 / 35);
+  font-size: 2.5rem;
+  line-height: calc(32 / 25);
   letter-spacing: 0.06em;
   font-weight: normal;
   color: $dark-headers-color;
+  @media screen and (min-width: $tablet) {
+    font-size: 3.5rem;
+    line-height: calc(45 / 35);
+  }
 }
+
 %h4 {
   font-size: 2rem;
   line-height: calc(23 / 20);
@@ -34,7 +39,11 @@
 }
 
 p {
+  text-align: justify;
   font-family: $secondary-font;
+  @media screen and (min-width: $tablet) {
+    text-align: left;
+  }
 }
 
 %small-additional-text {
