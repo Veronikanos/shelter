@@ -799,40 +799,91 @@ nav .nav-item.disabled {
 }
 .in-addition-container {
   display: flex;
-  max-width: 915px;
-  gap: 30px;
-  padding-left: 0;
-  padding-right: 0;
+  flex-direction: column-reverse;
+  gap: 43px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (min-width: 768px) {
+  .in-addition-container {
+    align-items: center;
+    gap: 60px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .in-addition-container {
+    max-width: 915px;
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 30px;
+  }
 }
 .in-addition__image {
-  margin-top: 11px;
+  margin-top: 11px auto 0;
+  padding: 0 10px;
 }
-.in-addition-header {
-  max-width: 300px;
+@media screen and (min-width: 1280px) {
+  .in-addition__image {
+    padding: 0;
+  }
+}
+.in-addition__image img {
+  margin: 0 auto;
 }
 .in-addition__text {
-  width: 380px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 21px;
+}
+@media screen and (min-width: 768px) {
+  .in-addition__text {
+    width: 52%;
+    gap: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .in-addition__text {
+    width: 41%;
+  }
 }
 .in-addition .name-of-bank {
-  letter-spacing: 0.06em;
   color: #545454;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .in-addition .name-of-bank {
+    letter-spacing: 0.06em;
+    text-align: left;
+  }
 }
 .in-addition .card-number {
-  width: 350px;
   position: relative;
-  padding: 10px 15px;
+  padding: 12px 15px;
+  width: 281px;
+  margin: 0 auto;
   background: #f1cdb3;
   border-radius: 9px;
-  margin-bottom: 6px;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 768px) {
+  .in-addition .card-number {
+    width: 350px;
+    text-align: left;
+    padding: 10px 15px;
+    margin: 0 0 6px;
+  }
 }
 .in-addition .card-number h4 {
   position: relative;
-  left: 45px;
+  left: 20px;
   color: #545454;
+}
+@media screen and (min-width: 768px) {
+  .in-addition .card-number h4 {
+    left: 45px;
+  }
 }
 .in-addition .card-number:hover {
   background-color: #fddcc4;
