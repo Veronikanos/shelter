@@ -343,8 +343,8 @@ header {
 }
 @media screen and (min-width: 1280px) {
   .logo {
-    padding-bottom: 32px;
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 .logo:hover {
@@ -1080,11 +1080,17 @@ footer .footer-image img {
 @media screen and (min-width: 1280px) {
   .our-friends.pets-page {
     padding-top: 85px;
+    padding-bottom: 100px;
   }
 }
 @media screen and (min-width: 768px) {
   .our-friends.pets-page .our-friends-container {
     gap: 30px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .our-friends.pets-page .our-friends-container {
+    gap: 60px;
   }
 }
 .our-friends.pets-page .our-friends__slider {
@@ -1093,6 +1099,11 @@ footer .footer-image img {
 @media screen and (min-width: 768px) {
   .our-friends.pets-page .our-friends__slider {
     margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .our-friends.pets-page .our-friends__slider {
+    margin-bottom: 0;
   }
 }
 .our-friends.pets-page .our-friends__slider .icon {

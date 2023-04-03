@@ -30,8 +30,9 @@ header {
   }
 
   @media screen and (min-width: $desktop) {
-    padding-bottom: 32px;
+    // padding-bottom: 32px;
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   &:hover {
