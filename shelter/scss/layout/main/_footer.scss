@@ -133,4 +133,8 @@ footer {
       width: 305px;
     }
   }
+
+  .address-text__header {
+    @extend %h3;
+  }
 }

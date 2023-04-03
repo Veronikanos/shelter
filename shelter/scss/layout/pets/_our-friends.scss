@@ -51,6 +51,10 @@
       justify-content: space-evenly;
     }
 
+    @media screen and (max-width: 767px) {
+      row-gap: 30px;
+    }
+
     @media screen and (min-width: $tablet) {
       justify-content: space-evenly;
       row-gap: 30px;

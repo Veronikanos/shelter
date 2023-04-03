@@ -104,7 +104,7 @@ h2 {
   }
 }
 
-h3 {
+footer .address-text__header, h3 {
   font-size: 2.5rem;
   line-height: 1.28;
   letter-spacing: 0.06em;
@@ -112,7 +112,7 @@ h3 {
   color: #545454;
 }
 @media screen and (min-width: 768px) {
-  h3 {
+  footer .address-text__header, h3 {
     font-size: 3.5rem;
     line-height: 1.2857142857;
   }
@@ -1059,7 +1059,6 @@ footer .footer-image img {
     width: 305px;
   }
 }
-
 .pets-header {
   width: 100%;
 }
@@ -1144,6 +1143,11 @@ footer .footer-image img {
 @media screen and (min-width: 570px) {
   .our-friends.pets-page .our-friends-list.pets-page {
     justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 767px) {
+  .our-friends.pets-page .our-friends-list.pets-page {
+    row-gap: 30px;
   }
 }
 @media screen and (min-width: 768px) {
