@@ -617,15 +617,14 @@ nav .nav-item.disabled {
 .our-friends__slider {
   display: flex;
   flex-direction: column-reverse;
-  max-width: 270px;
   gap: 20px;
   overflow-x: hidden;
   margin-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
   .our-friends__slider {
-    max-width: 581px;
     margin-bottom: 0;
+    width: 83%;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -641,14 +640,17 @@ nav .nav-item.disabled {
 }
 @media screen and (min-width: 768px) {
   .our-friends .button-wrapper {
-    gap: 604px;
     position: absolute;
     top: 49%;
+    width: 100%;
+    justify-content: space-between;
   }
 }
 @media screen and (min-width: 1280px) {
   .our-friends .button-wrapper {
     gap: 1096px;
+    justify-content: space-between;
+    width: 94%;
   }
 }
 .our-friends .prev,
@@ -679,13 +681,31 @@ nav .nav-item.disabled {
   transform: rotate(-180deg);
 }
 .our-friends-list {
+  flex-wrap: wrap;
   display: flex;
-  gap: 40px;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .our-friends-list {
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 820px) {
+  .our-friends-list {
+    justify-content: space-evenly;
+  }
 }
 @media screen and (min-width: 1280px) {
   .our-friends-list {
-    gap: 90px;
+    justify-content: space-between;
   }
+}
+.our-friends-list.main-page {
+  height: 435px;
+  overflow: hidden;
 }
 .our-friends-item {
   width: 270px;
@@ -1099,6 +1119,7 @@ footer .footer-image img {
 @media screen and (min-width: 768px) {
   .our-friends.pets-page .our-friends__slider {
     margin-bottom: 10px;
+    min-width: 56%;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -1114,9 +1135,30 @@ footer .footer-image img {
 .our-friends.pets-page .our-friends__slider .arrow-right {
   transform: rotate(-180deg);
 }
-.our-friends.pets-page .our-friends-list {
+.our-friends.pets-page .our-friends__slider.pets-page {
+  width: 100%;
+}
+.our-friends.pets-page .our-friends-list.pets-page {
   flex-wrap: wrap;
-  gap: 30px 40px;
+}
+@media screen and (min-width: 570px) {
+  .our-friends.pets-page .our-friends-list.pets-page {
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 768px) {
+  .our-friends.pets-page .our-friends-list.pets-page {
+    justify-content: space-evenly;
+    row-gap: 30px;
+    max-width: 93%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .our-friends.pets-page .our-friends-list.pets-page {
+    justify-content: space-between;
+    gap: 30px 40px;
+    max-width: 100%;
+  }
 }
 .our-friends.pets-page .our-friends-item {
   display: none;

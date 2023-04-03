@@ -25,18 +25,23 @@
     }
   }
 
+  // &-list {
+  //   flex-wrap: wrap;
+  // }
+
   &__slider {
     // position: relative;
     display: flex;
     flex-direction: column-reverse;
-    max-width: 270px;
+    // max-width: 270px;
     gap: 20px;
     overflow-x: hidden;
     margin-bottom: 20px;
 
     @media screen and (min-width: $tablet) {
-      max-width: 581px;
+      // max-width: 581px;
       margin-bottom: 0;
+      width: 83%;
     }
 
     @media screen and (min-width: $desktop) {
@@ -51,13 +56,17 @@
     margin-bottom: 42px;
 
     @media screen and (min-width: $tablet) {
-      gap: 604px;
+      // gap: 604px;
       position: absolute;
       top: 49%;
+      width: 100%;
+      justify-content: space-between;
     }
 
     @media screen and (min-width: $desktop) {
       gap: 1096px;
+      justify-content: space-between;
+      width: 94%;
     }
   }
 
@@ -84,14 +93,6 @@
     border-color: $hover-btn;
   }
 
-  // .prev {
-  //   left: 0;
-  // }
-
-  // .next {
-  //   right: 0;
-  // }
-
   .icon {
     display: block;
     border-radius: 50%;
@@ -103,12 +104,31 @@
   }
   &-list {
     // width: 1200px;
+    flex-wrap: wrap;
     display: flex;
-    // justify-content: center;
-    gap: 40px;
-    @media screen and (min-width: $desktop) {
-      gap: 90px;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+    // height: 435px;
+    // overflow: hidden;
+
+    @media screen and (min-width: $tablet) {
+      justify-content: space-between;
     }
+
+    @media screen and (min-width: 820px) {
+      justify-content: space-evenly;
+    }
+
+    @media screen and (min-width: $desktop) {
+      justify-content: space-between;
+    }
+  }
+
+  &-list.main-page {
+    height: 435px;
+    overflow: hidden;
   }
 
   &-item {

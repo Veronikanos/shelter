@@ -23,6 +23,7 @@
     margin-bottom: 42px;
     @media screen and (min-width: $tablet) {
       margin-bottom: 10px;
+      min-width: 56%;
     }
     @media screen and (min-width: $desktop) {
       margin-bottom: 0;
@@ -39,9 +40,27 @@
     }
   }
 
-  .our-friends-list {
+  .our-friends__slider.pets-page {
+    width: 100%;
+  }
+
+  .our-friends-list.pets-page {
     flex-wrap: wrap;
-    gap: 30px 40px;
+
+    @media screen and (min-width: 570px) {
+      justify-content: space-evenly;
+    }
+
+    @media screen and (min-width: $tablet) {
+      justify-content: space-evenly;
+      row-gap: 30px;
+      max-width: 93%;
+    }
+    @media screen and (min-width: $desktop) {
+      justify-content: space-between;
+      gap: 30px 40px;
+      max-width: 100%;
+    }
   }
 
   .our-friends-item {
