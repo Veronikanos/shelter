@@ -1,25 +1,77 @@
 .help {
-  // &-container {
-  //   display: flex;
-  //   justify-content: center;
-  // }
+  &-container {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @media screen and (min-width: $tablet) {
+      padding-right: 69px;
+      padding-left: 69px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding-right: 127px;
+      padding-left: 127px;
+    }
+  }
 
   &-header {
-    margin-bottom: 60px;
+    margin-bottom: 42px;
     text-align: center;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 60px;
+    }
   }
-  &-list {
+
+  &-wrapper {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    row-gap: 58px;
-    column-gap: 120px;
   }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    justify-content: center;
+    justify-items: center;
+    white-space: nowrap;
+
+    @media screen and (min-width: 450px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: $tablet) {
+      grid-row-gap: 55px;
+      grid-column-gap: 65px;
+    }
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-items: center;
+      grid-column-gap: 119px;
+    }
+  }
+
   &-item {
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+    @media screen and (min-width: $tablet) {
+      gap: 30px;
+    }
+
+    &:last-of-type {
+      align-self: flex-start;
+    }
+
+    & svg {
+      height: 50px;
+      @media screen and (min-width: $tablet) {
+        height: 60px;
+      }
+    }
   }
 }

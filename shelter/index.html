@@ -18,7 +18,7 @@
   </head>
   <body>
     <header class="header main-header">
-      <div class="container">
+      <div class="container container-mobile">
         <a class="logo" href=""
           ><span class="logo-name">Cozy House</span>
           <h1 class="header-name header-name__main">
@@ -47,15 +47,21 @@
             </li>
           </ul>
         </nav>
+        <button class="nav-button burger-main">
+          <svg width="30" height="22">
+            <use href="./assets/icons/sprite.svg#burger"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
       <section class="not-only hero">
-        <div class="container">
+        <div class="container hero-container">
           <div class="hero-wrapper">
             <div class="hero-text">
               <h2 class="hero-header">
-                Not only people need a house
+                Not only people <br />
+                need a house
               </h2>
               <p class="hero-description">
                 We offer to give a chance to a little and nice puppy
@@ -67,6 +73,11 @@
                 Make a friend
               </a>
             </div>
+          </div>
+          <div class="bg-image-wrapper">
+            <img
+              src="./assets/images/start-screen-puppy.png"
+              alt="puppy" />
           </div>
         </div>
       </section>
@@ -110,6 +121,45 @@
             are looking for a house
           </h3>
           <div class="our-friends__slider">
+            <div class="cards-wrapper">
+              <ul class="our-friends-list main-page">
+                <li class="our-friends-item">
+                  <div class="our-friends-image">
+                    <img
+                      src="./assets/images/pets/katrine.png"
+                      alt="grey cat" />
+                  </div>
+                  <span class="pet-name">Katrine</span
+                  ><button class="btn transparent btn__learn-more">
+                    Learn more
+                  </button>
+                </li>
+                <li class="our-friends-item">
+                  <div class="our-friends-image">
+                    <img
+                      src="./assets/images/pets/jennifer.png"
+                      alt="little white dog" />
+                  </div>
+                  <span class="pet-name">Jennifer</span
+                  ><button class="btn transparent btn__learn-more">
+                    Learn more
+                  </button>
+                </li>
+                <li class="our-friends-item">
+                  <div class="our-friends-image">
+                    <img
+                      src="./assets/images/pets/woody.png"
+                      alt="big labrador" />
+                  </div>
+                  <span class="pet-name">Woody</span
+                  ><button class="btn transparent btn__learn-more">
+                    Learn more
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="button-wrapper">
             <button class="prev">
               <svg
                 class="icon arrow-left"
@@ -128,41 +178,6 @@
                 <path d="M14 2V4H3V6L0 3L3 0V2H14Z" />
               </svg>
             </button>
-            <ul class="our-friends-list">
-              <li class="our-friends-item">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/katrine.png"
-                    alt="grey cat" />
-                </div>
-                <span class="pet-name">Katrine</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/jennifer.png"
-                    alt="little white dog" />
-                </div>
-                <span class="pet-name">Jennifer</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/woody.png"
-                    alt="big labrador" />
-                </div>
-                <span class="pet-name">Woody</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-            </ul>
           </div>
           <div class="our-friends__button">
             <a href="./pets.html" class="btn our-friends__btn"
@@ -248,7 +263,7 @@
           </div>
           <div class="in-addition__text">
             <h3 class="in-addition-header">
-              You can also make a donation
+              You can also <br />make a donation
             </h3>
             <p class="name-of-bank">
               Name of the bank / Type of bank account
@@ -271,24 +286,34 @@
       <div class="footer-wrapper">
         <address>
           <div class="left-side">
-            <p class="address-headers-text">
+            <p class="address-headers-text address-text__header">
               For questions and suggestions
             </p>
             <a class="email-link" href="mailto:email@shelter.com">
+              <svg width="40" height="26">
+                <use href="./assets/icons/sprite.svg#mail"></use>
+              </svg>
+
               <p class="email address-text">email@shelter.com</p>
             </a>
             <a class="phone-link" href="tel:+136745677554">
+              <svg width="40" height="32">
+                <use href="./assets/icons/sprite.svg#phone"></use>
+              </svg>
               <p class="phone address-text">+13 674 567 75 54</p>
             </a>
           </div>
           <div class="right-side">
-            <p class="address-headers-text">
+            <p class="address-headers-text address-text__header">
               We are waiting for your visit
             </p>
             <a
               class="address-link"
               href="https://www.google.com/maps/search/1+Central+Street,+Boston/@42.3521667,-71.0652078,15z/data=!3m1!4b1"
               target="_blank">
+              <svg width="22" height="32">
+                <use href="./assets/icons/sprite.svg#pin"></use>
+              </svg>
               <p class="address address-text">
                 1 Central Street, Boston (entrance from the store)
               </p>
@@ -297,6 +322,9 @@
               class="address-link"
               href="https://www.google.com/maps/search/18+South+Park,+London/@51.5107255,-0.1600785,12z/data=!3m1!4b1"
               target="_blank">
+              <svg width="22" height="32">
+                <use href="./assets/icons/sprite.svg#pin"></use>
+              </svg>
               <p class="address address-text">
                 18 South Park, London
               </p>

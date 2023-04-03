@@ -17,11 +17,23 @@ header {
 }
 
 .logo {
+  padding-bottom: 32px;
+  padding-top: 32px;
   font-size: 3.2rem;
   line-height: calc(35 / 32);
   color: $primary-color;
   letter-spacing: 0.06em;
   @extend %transition-color;
+
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    // padding-bottom: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
   &:hover {
     color: $light-bg;
@@ -50,7 +62,12 @@ header {
 }
 
 nav {
+  display: none;
   font-family: $secondary-font;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+  }
 
   .nav-menu {
     display: flex;
@@ -94,4 +111,18 @@ nav {
   .nav-item.disabled {
     pointer-events: none;
   }
+}
+
+.nav-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.burger-main {
+  stroke: #f1cdb3;
 }

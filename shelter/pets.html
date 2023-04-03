@@ -18,7 +18,7 @@
   </head>
   <body>
     <header class="header pets-header">
-      <div class="container">
+      <div class="container container-mobile">
         <a class="logo logo-pets" href="./index.html"
           ><span class="logo-name logo-name__pets">Cozy House</span>
           <h1 class="header-name header-name__pets">
@@ -47,6 +47,11 @@
             </li>
           </ul>
         </nav>
+        <button class="nav-button burger-pets">
+          <svg width="30" height="22">
+            <use href="./assets/icons/sprite.svg#burger"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
@@ -56,8 +61,8 @@
             Our friends who <br />
             are looking for a house
           </h3>
-          <div class="our-friends__slider">
-            <ul class="our-friends-list">
+          <div class="our-friends__slider pets-page">
+            <ul class="our-friends-list pets-page">
               <li class="our-friends-item">
                 <div class="our-friends-image">
                   <img
@@ -188,24 +193,34 @@
       <div class="footer-wrapper">
         <address>
           <div class="left-side">
-            <p class="address-headers-text">
+            <p class="address-headers-text address-text__header">
               For questions and suggestions
             </p>
             <a class="email-link" href="mailto:email@shelter.com">
+              <svg width="40" height="26">
+                <use href="./assets/icons/sprite.svg#mail"></use>
+              </svg>
+
               <p class="email address-text">email@shelter.com</p>
             </a>
             <a class="phone-link" href="tel:+136745677554">
+              <svg width="40" height="32">
+                <use href="./assets/icons/sprite.svg#phone"></use>
+              </svg>
               <p class="phone address-text">+13 674 567 75 54</p>
             </a>
           </div>
           <div class="right-side">
-            <p class="address-headers-text">
+            <p class="address-headers-text address-text__header">
               We are waiting for your visit
             </p>
             <a
               class="address-link"
               href="https://www.google.com/maps/search/1+Central+Street,+Boston/@42.3521667,-71.0652078,15z/data=!3m1!4b1"
               target="_blank">
+              <svg width="22" height="32">
+                <use href="./assets/icons/sprite.svg#pin"></use>
+              </svg>
               <p class="address address-text">
                 1 Central Street, Boston (entrance from the store)
               </p>
@@ -214,6 +229,9 @@
               class="address-link"
               href="https://www.google.com/maps/search/18+South+Park,+London/@51.5107255,-0.1600785,12z/data=!3m1!4b1"
               target="_blank">
+              <svg width="22" height="32">
+                <use href="./assets/icons/sprite.svg#pin"></use>
+              </svg>
               <p class="address address-text">
                 18 South Park, London
               </p>
