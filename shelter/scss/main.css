@@ -336,8 +336,14 @@ header {
   color: #f1cdb3;
   letter-spacing: 0.06em;
 }
+@media screen and (min-width: 768px) {
+  .logo {
+    padding-bottom: 24px;
+  }
+}
 @media screen and (min-width: 1280px) {
   .logo {
+    padding-bottom: 32px;
     padding-top: 0;
   }
 }
@@ -910,13 +916,15 @@ footer .footer-wrapper {
 }
 @media screen and (min-width: 768px) {
   footer .footer-wrapper {
-    flex-direction: row;
-    gap: 0;
-    padding: 40px 40px 0;
+    padding: 30px 30px 0;
+    gap: 66px;
   }
 }
 @media screen and (min-width: 1280px) {
   footer .footer-wrapper {
+    flex-direction: row;
+    gap: 0;
+    padding: 40px 40px 0;
     max-width: 1280px;
   }
 }
@@ -929,12 +937,19 @@ footer address {
 }
 @media screen and (min-width: 768px) {
   footer address {
-    width: 73%;
     flex-direction: row;
     justify-content: space-between;
-    gap: 0;
-    margin-top: 16px;
+    gap: 61px;
     text-align: left;
+    padding: 0 34px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  footer address {
+    width: 73%;
+    margin-top: 16px;
+    padding: 0;
+    gap: 0;
   }
 }
 footer address a:hover p {
@@ -951,7 +966,13 @@ footer address .address-headers-text {
 }
 @media screen and (min-width: 768px) {
   footer address .address-headers-text {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  footer address .address-headers-text {
     max-width: 280px;
+    margin: 0;
   }
 }
 footer address .address-text {
@@ -967,7 +988,7 @@ footer address .left-side {
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
-  gap: 46px;
+  gap: 43px;
 }
 footer address .right-side {
   flex: 1 1 50%;
@@ -976,6 +997,15 @@ footer address .right-side {
   justify-content: space-between;
   gap: 40px;
 }
+@media screen and (min-width: 768px) {
+  footer address .right-side {
+    gap: 0;
+  }
+}
+footer address .right-side a .address-text {
+  width: 258px;
+  text-align: left;
+}
 footer address .email-link,
 footer address .phone-link,
 footer address .address-link {
@@ -983,6 +1013,22 @@ footer address .address-link {
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  footer address .email-link,
+  footer address .phone-link,
+  footer address .address-link {
+    justify-content: flex-start;
+  }
+}
+footer .footer-image img {
+  width: 260px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-image img {
+    width: 305px;
+  }
 }
 
 .pets-header {

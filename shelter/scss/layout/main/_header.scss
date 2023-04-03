@@ -25,7 +25,12 @@ header {
   letter-spacing: 0.06em;
   @extend %transition-color;
 
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 24px;
+  }
+
   @media screen and (min-width: $desktop) {
+    padding-bottom: 32px;
     padding-top: 0;
   }
 
