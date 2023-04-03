@@ -423,6 +423,10 @@ nav .nav-item.disabled {
   }
 }
 
+.burger-main {
+  stroke: #f1cdb3;
+}
+
 .hero {
   padding: 0;
   background: url(../assets/images/noise_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
@@ -1053,6 +1057,9 @@ footer .footer-image img {
 }
 .pets-header nav .nav-item__link:hover, .pets-header nav .nav-item__link.disabled {
   color: #292929;
+}
+.pets-header .burger-pets {
+  stroke: #000000;
 }
 
 .our-friends.pets-page {

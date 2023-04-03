@@ -86,9 +86,9 @@
 
 
 	<symbol id="burger" viewBox="0 0 30 22">
-		<line y1="21" x2="30" y2="21" stroke="#F1CDB3" stroke-width="2"/>
-		<line y1="11" x2="30" y2="11" stroke="#F1CDB3" stroke-width="2"/>
-		<line y1="1" x2="30" y2="1" stroke="#F1CDB3" stroke-width="2"/>
+		<line y1="21" x2="30" y2="21" stroke-width="2"/>
+		<line y1="11" x2="30" y2="11" stroke-width="2"/>
+		<line y1="1" x2="30" y2="1" stroke-width="2"/>
 	</symbol>
 
 	<symbol id="phone" viewBox="0 0 40 32">

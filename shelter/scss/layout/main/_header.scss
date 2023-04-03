@@ -111,6 +111,7 @@ nav {
     pointer-events: none;
   }
 }
+
 .nav-button {
   padding: 0;
   background-color: transparent;
@@ -119,4 +120,8 @@ nav {
   @media screen and (min-width: $tablet) {
     display: none;
   }
+}
+
+.burger-main {
+  stroke: #f1cdb3;
 }
