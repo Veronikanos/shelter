@@ -1046,6 +1046,12 @@ footer .footer-image img {
 .pets-header .logo-pets {
   color: #545454;
 }
+@media screen and (max-width: 768px) {
+  .pets-header .logo-pets {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+}
 .pets-header .logo-pets:hover {
   color: #f1cdb3;
 }
@@ -1063,24 +1069,69 @@ footer .footer-image img {
 }
 
 .our-friends.pets-page {
-  padding-top: 85px;
+  padding-top: 42px;
 }
-.our-friends.pets-page__slider .icon {
+@media screen and (min-width: 768px) {
+  .our-friends.pets-page {
+    padding-top: 80px;
+    padding-bottom: 76px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .our-friends.pets-page {
+    padding-top: 85px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .our-friends.pets-page .our-friends-container {
+    gap: 30px;
+  }
+}
+.our-friends.pets-page .our-friends__slider {
+  margin-bottom: 42px;
+}
+@media screen and (min-width: 768px) {
+  .our-friends.pets-page .our-friends__slider {
+    margin-bottom: 10px;
+  }
+}
+.our-friends.pets-page .our-friends__slider .icon {
   display: block;
   border-radius: 50%;
   fill: #292929;
 }
-.our-friends.pets-page__slider .arrow-right {
+.our-friends.pets-page .our-friends__slider .arrow-right {
   transform: rotate(-180deg);
 }
 .our-friends.pets-page .our-friends-list {
   flex-wrap: wrap;
   gap: 30px 40px;
 }
+.our-friends.pets-page .our-friends-item {
+  display: none;
+}
+@media screen and (min-width: 1280px) {
+  .our-friends.pets-page .our-friends-item {
+    display: block;
+  }
+}
+.our-friends.pets-page .our-friends-item:nth-child(-n+3) {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .our-friends.pets-page .our-friends-item:nth-child(-n+6) {
+    display: block;
+  }
+}
 .our-friends.pets-page .our-friends__pagination {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .our-friends.pets-page .our-friends__pagination {
+    gap: 20px;
+  }
 }
 .our-friends.pets-page .our-friends__pagination .pagination-btn {
   padding: 0;

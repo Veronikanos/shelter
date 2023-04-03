@@ -4,6 +4,11 @@
   .logo-pets {
     color: $dark-headers-color;
 
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+
     &:hover {
       color: $active-color;
     }

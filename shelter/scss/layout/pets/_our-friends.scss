@@ -1,7 +1,26 @@
 .our-friends.pets-page {
-  padding-top: 85px;
+  padding-top: 42px;
 
-  &__slider {
+  @media screen and (min-width: $tablet) {
+    padding-top: 80px;
+    padding-bottom: 76px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 85px;
+  }
+
+  .our-friends-container {
+    @media screen and (min-width: $tablet) {
+      gap: 30px;
+    }
+  }
+
+  .our-friends__slider {
+    margin-bottom: 42px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 10px;
+    }
+
     .icon {
       display: block;
       border-radius: 50%;
@@ -18,10 +37,30 @@
     gap: 30px 40px;
   }
 
+  .our-friends-item {
+    display: none;
+    @media screen and (min-width: $desktop) {
+      display: block;
+    }
+  }
+
+  .our-friends-item:nth-child(-n + 3) {
+    display: block;
+  }
+
+  .our-friends-item:nth-child(-n + 6) {
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+
   .our-friends__pagination {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
+    @media screen and (min-width: $tablet) {
+      gap: 20px;
+    }
 
     .pagination-btn {
       padding: 0;
