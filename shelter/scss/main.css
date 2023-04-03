@@ -597,6 +597,11 @@ nav .nav-item.disabled {
     gap: 60px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .our-friends .container {
+    margin: 0 auto;
+  }
+}
 .our-friends-header {
   margin-bottom: 42px;
 }
