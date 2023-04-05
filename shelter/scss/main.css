@@ -1059,6 +1059,15 @@ footer .footer-image img {
     width: 305px;
   }
 }
+footer .address-text__header {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  footer .address-text__header {
+    text-align: left;
+  }
+}
+
 .pets-header {
   width: 100%;
 }
