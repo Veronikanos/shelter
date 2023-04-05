@@ -42,6 +42,12 @@ header {
   .logo-name {
     display: inline-block;
     margin-bottom: 10px;
+    // margin-top: 10px;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 7px;
+      margin-top: 5px;
+    }
   }
 
   .header-name {
@@ -58,6 +64,9 @@ header {
 
   .header-name__main {
     color: $main-color;
+    @media screen and (min-width: $tablet) {
+      text-align: right;
+    }
   }
 }
 

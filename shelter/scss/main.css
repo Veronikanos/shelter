@@ -354,6 +354,12 @@ header {
   display: inline-block;
   margin-bottom: 10px;
 }
+@media screen and (min-width: 1280px) {
+  .logo .logo-name {
+    margin-bottom: 7px;
+    margin-top: 5px;
+  }
+}
 .logo .header-name {
   font-family: "Arial";
   font-weight: 400;
@@ -366,6 +372,11 @@ header {
 }
 .logo .header-name__main {
   color: #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .logo .header-name__main {
+    text-align: right;
+  }
 }
 
 nav {
@@ -624,12 +635,13 @@ nav .nav-item.disabled {
 @media screen and (min-width: 768px) {
   .our-friends__slider {
     margin-bottom: 0;
-    width: 83%;
+    width: 84%;
   }
 }
 @media screen and (min-width: 1280px) {
   .our-friends__slider {
     max-width: 1280px;
+    width: 82.5%;
   }
 }
 .our-friends .button-wrapper {
@@ -866,6 +878,11 @@ nav .nav-item.disabled {
 .in-addition__image img {
   margin: 0 auto;
 }
+@media screen and (min-width: 1280px) {
+  .in-addition-header {
+    line-height: 1.3;
+  }
+}
 .in-addition__text {
   display: flex;
   flex-direction: column;
@@ -884,7 +901,7 @@ nav .nav-item.disabled {
 }
 .in-addition .name-of-bank {
   color: #545454;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   text-align: center;
 }
 @media screen and (min-width: 768px) {
@@ -1086,6 +1103,11 @@ footer .address-text__header {
 .pets-header .logo-pets .header-name__pets {
   color: #292929;
 }
+@media screen and (min-width: 768px) {
+  .pets-header .logo-pets .header-name__pets {
+    text-align: right;
+  }
+}
 .pets-header nav .nav-item__link {
   color: #545454;
 }
@@ -1156,7 +1178,7 @@ footer .address-text__header {
 }
 @media screen and (max-width: 767px) {
   .our-friends.pets-page .our-friends-list.pets-page {
-    row-gap: 30px;
+    row-gap: 31px;
   }
 }
 @media screen and (min-width: 768px) {
