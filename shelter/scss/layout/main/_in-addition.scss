@@ -36,7 +36,9 @@
   }
 
   &-header {
-    // max-width: 300px;
+    @media screen and (min-width: $desktop) {
+      line-height: 1.3;
+    }
   }
 
   &__text {
@@ -56,13 +58,11 @@
 
   .name-of-bank {
     color: $dark-headers-color;
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
     text-align: center;
     @media screen and (min-width: $tablet) {
       letter-spacing: 0.06em;
       text-align: left;
-    }
-    @media screen and (min-width: $desktop) {
     }
   }
 
