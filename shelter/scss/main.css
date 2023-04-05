@@ -375,7 +375,7 @@ header {
 }
 @media screen and (min-width: 768px) {
   .logo .header-name__main {
-    text-align: right;
+    text-align: center;
   }
 }
 
@@ -1105,7 +1105,7 @@ footer .address-text__header {
 }
 @media screen and (min-width: 768px) {
   .pets-header .logo-pets .header-name__pets {
-    text-align: right;
+    text-align: center;
   }
 }
 .pets-header nav .nav-item__link {
