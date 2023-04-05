@@ -136,5 +136,9 @@ footer {
 
   .address-text__header {
     @extend %h3;
+    text-align: center;
+    @media screen and (min-width: $tablet) {
+      text-align: left;
+    }
   }
 }
