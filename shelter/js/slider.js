@@ -8,25 +8,32 @@ const getData = async (url) => {
 };
 
 let allPets = await getData('./assets/data.json');
-console.log(allPets);
+
 let pastArr = [];
 let currArr = [];
 let nextArr = [];
+let numberOfCards = 0;
 
 const petsCards = document.querySelector('.our-friends-list');
+const nextButton = document.querySelector('button.next');
+const prevButton = document.querySelector('button.prev');
+
+init();
+nextButton.addEventListener('click', forward);
+prevButton.addEventListener('click', backward);
 
 async function init() {
-  const [sliderWidth, numberOfCards] = getSlidersWidth();
+  const sliderWidth = getSlidersWidth();
 
   // - 1. генерируем массив nextArr;
-  generateArr(numberOfCards, nextArr);
+  generateArr(nextArr);
 
   // - 2. перемещаем значения из массива nextArr (попутно его обнуляя) в массив currArr;
   currArr.push(...nextArr);
   nextArr = [];
 
   // - 3. генерируем массив nextArr (помним про проверку на наличие значений в currArr);
-  generateArr(numberOfCards, nextArr);
+  generateArr(nextArr);
 
   // - 4. перемещаем значения из массива currArr (попутно его обнуляя) в массив pastArr;
   pastArr.push(...currArr);
@@ -37,9 +44,9 @@ async function init() {
   nextArr = [];
 
   // - 6. генерируем массив nextArr (помним про проверку на наличие значений в currArr);
-  generateArr(numberOfCards, nextArr);
+  generateArr(nextArr);
 
-  console.log(pastArr, currArr, nextArr);
+  // console.log(pastArr, currArr, nextArr);
 
   petsCards.innerHTML = generateCards().join('');
   // return > (pastArr([1,2,3]), currArr([4,5,6]), nextArr([7,8,1]))
@@ -48,11 +55,7 @@ async function init() {
 function generateCards() {
   let markup = [];
 
-  console.log(currArr);
-
   currArr.forEach((item) => {
-    console.log(item);
-
     markup.push(`  	<li class="our-friends-item our-friends__pets">
   	<div class="our-friends-image">
   		<img
@@ -82,7 +85,8 @@ function forward() {
   nextArr = [];
 
   // - 4. генерируем массив nextArr (помним про проверку на наличие значений в currArr).
-  generateArr(numberOfCards, nextArr);
+  generateArr(nextArr);
+  petsCards.innerHTML = generateCards().join('');
 }
 
 function backward() {
@@ -91,7 +95,8 @@ function backward() {
   currArr = [];
   currArr.push(...pastArr);
   pastArr = [];
-  generateArr(numberOfCards, pastArr);
+  generateArr(pastArr);
+  petsCards.innerHTML = generateCards().join('');
 }
 
 function changeToBackward() {
@@ -104,7 +109,7 @@ function changeToBackward() {
   // - 2. обнуляем значеничия массива nextArr;
   nextArr = [];
   // - 3. генерируем массив nextArr (помним про проверку на наличие значений в currArr).
-  generateArr(numberOfCards, nextArr);
+  generateArr(nextArr);
 }
 
 function changeToForward() {
@@ -114,18 +119,18 @@ function changeToForward() {
   currArr.push(...temp);
 
   pastArr = [];
-  generateArr(numberOfCards, pastArr);
+  generateArr(pastArr);
 }
 
-function generateArr(numberOfCards, arr) {
+function generateArr(arr) {
   for (let i = 0; i < numberOfCards; i++) {
     let randomNumber = Math.floor(Math.random() * allPets.length);
     let elementFromData = allPets[randomNumber];
-    // console.log(arr.includes(elementFromData));
 
     if (
-      arr.includes(elementFromData) ||
-      currArr.includes(elementFromData)
+      pastArr.includes(elementFromData) ||
+      currArr.includes(elementFromData) ||
+      nextArr.includes(elementFromData)
     ) {
       i--;
     } else {
@@ -139,14 +144,12 @@ function getSlidersWidth() {
   const width = myDiv.offsetWidth;
   console.log('Width: ' + width);
 
-  let numberOfCards = 2;
+  numberOfCards = 2;
   if (width < 580) {
     numberOfCards = 1;
   } else if (width > 580) {
     numberOfCards = 3;
   }
 
-  return [width, numberOfCards];
+  return width;
 }
-
-init();
