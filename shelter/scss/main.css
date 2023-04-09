@@ -354,7 +354,7 @@ header {
 @media screen and (min-width: 1280px) {
   .logo {
     padding-top: 30px;
-    padding-bottom: 0;
+    padding-bottom: 30px;
   }
 }
 .logo:hover {
