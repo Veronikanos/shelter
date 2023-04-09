@@ -6,13 +6,9 @@ const menu = document.querySelector('#menu').cloneNode(1);
 
 hamburger.addEventListener('click', hamburgerHandler);
 
-console.log('fgff');
-
 function hamburgerHandler(e) {
-  console.log('hello');
   e.preventDefault();
   popup.classList.toggle('open');
-  // popup.classList.toggle('visually-hidden');
   hamburger.classList.toggle('active');
   body.classList.toggle('noscroll');
   renderPopup();

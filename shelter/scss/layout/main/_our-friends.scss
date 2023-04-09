@@ -36,12 +36,13 @@
 
     @media screen and (min-width: $tablet) {
       margin-bottom: 0;
-      width: 84%;
+      // gap: 40px;
+      // width: 84%;
     }
 
     @media screen and (min-width: $desktop) {
       max-width: 1280px;
-      width: 82.5%;
+      // width: 82.5%;
     }
   }
 
@@ -111,15 +112,18 @@
     // overflow: hidden;
 
     @media screen and (min-width: $tablet) {
-      justify-content: space-between;
+      // justify-content: space-between;
+      gap: 40px;
     }
 
-    @media screen and (min-width: 820px) {
-      justify-content: space-evenly;
-    }
+    // @media screen and (min-width: 820px) {
+    //   justify-content: space-evenly;
+
+    // }
 
     @media screen and (min-width: $desktop) {
-      justify-content: space-between;
+      gap: 90px;
+      // justify-content: space-between;
     }
   }
 
