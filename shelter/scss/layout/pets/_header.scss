@@ -34,7 +34,16 @@
     }
   }
 
-  .burger-pets {
-    stroke: #000000;
+  .burger-pets .burger-line,
+  .burger-pets::before,
+  .burger-pets::after {
+    background-color: #000000;
+    @extend %transition;
+  }
+
+  .burger-pets.active .burger-line,
+  .burger-pets.active::before,
+  .burger-pets.active::after {
+    background-color: $active-color;
   }
 }

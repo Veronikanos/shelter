@@ -159,12 +159,22 @@ p {
   color: #b2b2b2;
 }
 
-.btn:disabled {
+.pets-header .burger-pets .burger-line,
+.pets-header .burger-pets::before,
+.pets-header .burger-pets::after, .btn:disabled {
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-footer address a p, nav .nav-item__link, .logo .header-name, .logo {
+footer address a p, .nav-item__link, .logo .header-name, .logo {
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-js::after, .burger-js::before, .burger-js .burger-line {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #f1cdb3;
 }
 
 html {
@@ -343,8 +353,8 @@ header {
 }
 @media screen and (min-width: 1280px) {
   .logo {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 .logo:hover {
@@ -392,23 +402,24 @@ nav .nav-menu {
   display: flex;
   gap: 35px;
 }
-nav .nav-item {
+
+.nav-item {
   padding: 46px 0;
 }
-nav .nav-item__link {
+.nav-item__link {
   position: relative;
   color: #cdcdcd;
 }
-nav .nav-item__link:active {
+.nav-item__link:active {
   color: #fafafa;
 }
-nav .nav-item__link:hover::after, nav .nav-item__link.disabled::after {
+.nav-item__link:hover::after, .nav-item__link.disabled::after {
   opacity: 1;
 }
-nav .nav-item__link:hover, nav .nav-item__link.disabled {
+.nav-item__link:hover, .nav-item__link.disabled {
   color: #fafafa;
 }
-nav .nav-item__link::after {
+.nav-item__link::after {
   content: "";
   position: absolute;
   background-color: #f1cdb3;
@@ -418,24 +429,89 @@ nav .nav-item__link::after {
   opacity: 0;
   transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-nav .nav-item.disabled {
+
+.nav-item.disabled {
   pointer-events: none;
 }
 
 .nav-button {
-  padding: 0;
+  cursor: pointer;
   background-color: transparent;
-  border: none;
   outline: none;
+  border: none;
+  z-index: 101;
+}
+
+.burger-js {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 22px;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 768px) {
-  .nav-button {
+  .burger-js {
     display: none;
   }
 }
+.burger-js .burger-line {
+  top: calc(50% - 1px);
+  left: 0;
+}
+.burger-js::before {
+  content: "";
+  top: 0;
+  left: 0;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.burger-js::after {
+  content: "";
+  bottom: 0;
+  left: 0;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.burger-js.active {
+  transform: rotate(-90deg);
+}
 
-.burger-main {
-  stroke: #f1cdb3;
+.popup {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background-color: #292929;
+  z-index: 100;
+  display: flex;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .popup {
+    visibility: hidden;
+  }
+}
+.popup.open {
+  right: 0;
+  box-shadow: 0 0 0 9999px rgba(41, 41, 41, 0.6);
+}
+
+.popup #menu {
+  width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  gap: 43px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 160%;
+}
+
+#menu .nav-item {
+  padding: 0;
 }
 
 .hero {
@@ -628,6 +704,7 @@ nav .nav-item.disabled {
 .our-friends__slider {
   display: flex;
   flex-direction: column-reverse;
+  max-width: 280px;
   gap: 20px;
   overflow-x: hidden;
   margin-bottom: 20px;
@@ -635,13 +712,12 @@ nav .nav-item.disabled {
 @media screen and (min-width: 768px) {
   .our-friends__slider {
     margin-bottom: 0;
-    width: 84%;
+    max-width: 620px;
   }
 }
 @media screen and (min-width: 1280px) {
   .our-friends__slider {
-    max-width: 1280px;
-    width: 82.5%;
+    max-width: 1080px;
   }
 }
 .our-friends .button-wrapper {
@@ -693,7 +769,6 @@ nav .nav-item.disabled {
   transform: rotate(-180deg);
 }
 .our-friends-list {
-  flex-wrap: wrap;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -702,17 +777,12 @@ nav .nav-item.disabled {
 }
 @media screen and (min-width: 768px) {
   .our-friends-list {
-    justify-content: space-between;
-  }
-}
-@media screen and (min-width: 820px) {
-  .our-friends-list {
-    justify-content: space-evenly;
+    gap: 40px;
   }
 }
 @media screen and (min-width: 1280px) {
   .our-friends-list {
-    justify-content: space-between;
+    gap: 90px;
   }
 }
 .our-friends-item {
@@ -776,6 +846,34 @@ nav .nav-item.disabled {
 .our-friends .btn__learn-more:hover {
   background-color: #fddcc4;
   border-color: #fddcc4;
+}
+.our-friends .carousel {
+  position: relative;
+  left: 0;
+}
+@keyframes move-right {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes move-left {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
+}
+.our-friends .transition-right {
+  animation-name: move-right;
+  animation-duration: 1.5s;
+}
+.our-friends .transition-left {
+  animation-name: move-left;
+  animation-duration: 1.5s;
 }
 
 .help-container {
@@ -969,7 +1067,7 @@ nav .nav-item.disabled {
 }
 
 footer {
-  background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+  background: url(../assets/images/noise_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
 }
 footer .footer-wrapper {
   margin: 0 auto;
@@ -1133,8 +1231,15 @@ footer .address-text__header {
 .pets-header nav .nav-item__link:hover, .pets-header nav .nav-item__link.disabled {
   color: #292929;
 }
-.pets-header .burger-pets {
-  stroke: #000000;
+.pets-header .burger-pets .burger-line,
+.pets-header .burger-pets::before,
+.pets-header .burger-pets::after {
+  background-color: #000000;
+}
+.pets-header .burger-pets.active .burger-line,
+.pets-header .burger-pets.active::before,
+.pets-header .burger-pets.active::after {
+  background-color: #f1cdb3;
 }
 
 .our-friends.pets-page {
@@ -1210,6 +1315,11 @@ footer .address-text__header {
 .our-friends.pets-page .our-friends__slider.pets-page {
   width: 100%;
 }
+@media screen and (min-width: 1280px) {
+  .our-friends.pets-page .our-friends__slider.pets-page {
+    max-width: 1200px;
+  }
+}
 .our-friends.pets-page .our-friends-list.pets-page {
   flex-wrap: wrap;
 }
@@ -1227,7 +1337,6 @@ footer .address-text__header {
   .our-friends.pets-page .our-friends-list.pets-page {
     justify-content: space-evenly;
     row-gap: 30px;
-    max-width: 93%;
   }
 }
 @media screen and (min-width: 1280px) {
