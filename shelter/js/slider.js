@@ -92,7 +92,6 @@ function forward() {
   currArr.push(...nextArr);
   nextArr = [];
   generateArr(nextArr);
-  // petsCards.innerHTML = generateCards().join('');
 }
 
 function backward() {
@@ -102,7 +101,6 @@ function backward() {
   currArr.push(...pastArr);
   pastArr = [];
   generateArr(pastArr);
-  // petsCards.innerHTML = generateCards().join('');
 }
 
 // // function changeToBackward() {
@@ -114,7 +112,7 @@ function backward() {
 
 // //   // - 2. обнуляем значеничия массива nextArr;
 // //   nextArr = [];
-// //   // - 3. генерируем массив nextArr (помним про проверку на наличие значений в currArr).
+// //   // - 3. генерируем массив nextArr
 // //   generateArr(nextArr);
 // // }
 
@@ -157,3 +155,23 @@ function getSlidersWidth() {
 
   return width;
 }
+
+const smallWidthMediaQuery = window.matchMedia('(max-width: 767px)');
+const mediumWidthMediaQuery = window.matchMedia(
+  '(min-width: 768px) and (max-width: 1279px)'
+);
+const largeWidthMediaQuery = window.matchMedia('(min-width: 1280px)');
+
+function mediaEvent(e) {
+  if (e.matches) {
+    pastArr = [];
+    currArr = [];
+    nextArr = [];
+    numberOfCards = 0;
+    init();
+    console.log(document.body.offsetWidth);
+  }
+}
+smallWidthMediaQuery.addEventListener('change', mediaEvent);
+mediumWidthMediaQuery.addEventListener('change', mediaEvent);
+largeWidthMediaQuery.addEventListener('change', mediaEvent);

@@ -3,9 +3,3 @@
 // );
 import './js/mobile-menu.js';
 import './js/slider.js';
-
-// const mediumWidthMediaQuery = window.matchMedia('(min-width: 500px) and (max-width: 677.98px)'); // создаем переменную для среднего экрана
-// function mediaEvent(e) {
-//   if (e.matches) console.log('it works');
-// }
-// mediumWidthMediaQuery.addEventListener('change', mediaEvent);

@@ -869,11 +869,11 @@ nav .nav-menu {
 }
 .our-friends .transition-right {
   animation-name: move-right;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }
 .our-friends .transition-left {
   animation-name: move-left;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }
 
 .help-container {
