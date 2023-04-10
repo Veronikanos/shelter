@@ -704,6 +704,7 @@ nav .nav-menu {
 .our-friends__slider {
   display: flex;
   flex-direction: column-reverse;
+  max-width: 290px;
   gap: 20px;
   overflow-x: hidden;
   margin-bottom: 20px;
@@ -711,11 +712,12 @@ nav .nav-menu {
 @media screen and (min-width: 768px) {
   .our-friends__slider {
     margin-bottom: 0;
+    max-width: 620px;
   }
 }
 @media screen and (min-width: 1280px) {
   .our-friends__slider {
-    max-width: 1280px;
+    max-width: 1320px;
   }
 }
 .our-friends .button-wrapper {
@@ -767,7 +769,6 @@ nav .nav-menu {
   transform: rotate(-180deg);
 }
 .our-friends-list {
-  flex-wrap: wrap;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -845,6 +846,34 @@ nav .nav-menu {
 .our-friends .btn__learn-more:hover {
   background-color: #fddcc4;
   border-color: #fddcc4;
+}
+.our-friends .carousel {
+  position: relative;
+  left: 0;
+}
+@keyframes move-right {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes move-left {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
+}
+.our-friends .transition-right {
+  animation-name: move-right;
+  animation-duration: 3s;
+}
+.our-friends .transition-left {
+  animation-name: move-left;
+  animation-duration: 3s;
 }
 
 .help-container {

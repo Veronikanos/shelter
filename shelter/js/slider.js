@@ -1,28 +1,42 @@
-const getData = async (url) => {
-  try {
-    const res = await fetch(url);
-    return await res.json();
-  } catch (err) {
-    console.log(err.message);
-  }
-};
-
-let allPets = await getData('./assets/data.json');
-
 let pastArr = [];
 let currArr = [];
 let nextArr = [];
 let numberOfCards = 0;
+let allPets;
 
 const petsCards = document.querySelector('.our-friends-list');
 const nextButton = document.querySelector('button.next');
 const prevButton = document.querySelector('button.prev');
 
-init();
-nextButton.addEventListener('click', forward);
-prevButton.addEventListener('click', backward);
+async function start() {
+  try {
+    const res = await fetch('./assets/data.json');
+    allPets = await res.json();
+  } catch (err) {
+    console.log(err.message);
+  }
+  console.log(allPets);
+  init();
+}
 
-async function init() {
+start();
+
+nextButton.addEventListener('click', moveRight);
+prevButton.addEventListener('click', moveLeft);
+
+petsCards.addEventListener('animationend', (e) => {
+  if (e.animationName === 'move-right') {
+    petsCards.classList.remove('transition-right');
+    forward();
+  } else {
+    petsCards.classList.remove('transition-left');
+    backward();
+  }
+  nextButton.addEventListener('click', moveRight);
+  prevButton.addEventListener('click', moveLeft);
+});
+
+function init() {
   const sliderWidth = getSlidersWidth();
 
   // - 1. генерируем массив nextArr;
@@ -55,7 +69,10 @@ async function init() {
 function generateCards() {
   let markup = [];
 
-  currArr.forEach((item) => {
+  const carouselCards = [...pastArr, ...currArr, ...nextArr];
+  console.log(carouselCards);
+
+  carouselCards.forEach((item) => {
     markup.push(`  	<li class="our-friends-item our-friends__pets">
   	<div class="our-friends-image">
   		<img
@@ -70,6 +87,16 @@ function generateCards() {
   });
 
   return markup;
+}
+
+function moveRight() {
+  petsCards.classList.add('transition-right');
+  nextButton.removeEventListener('click', moveRight);
+}
+
+function moveLeft() {
+  petsCards.classList.add('transition-left');
+  nextButton.removeEventListener('click', moveLeft);
 }
 
 function forward() {
@@ -87,6 +114,7 @@ function forward() {
   // - 4. генерируем массив nextArr (помним про проверку на наличие значений в currArr).
   generateArr(nextArr);
   petsCards.innerHTML = generateCards().join('');
+  // nextButton.addEventListener('click', forward);
 }
 
 function backward() {
@@ -99,28 +127,28 @@ function backward() {
   petsCards.innerHTML = generateCards().join('');
 }
 
-function changeToBackward() {
-  // - 1. меняем местами значения в массивах pastArr и currArr;
-  const temp = [];
-  temp.push(...pastArr);
-  pastArr.push(...currArr);
-  currArr.push(...temp);
+// function changeToBackward() {
+//   // - 1. меняем местами значения в массивах pastArr и currArr;
+//   const temp = [];
+//   temp.push(...pastArr);
+//   pastArr.push(...currArr);
+//   currArr.push(...temp);
 
-  // - 2. обнуляем значеничия массива nextArr;
-  nextArr = [];
-  // - 3. генерируем массив nextArr (помним про проверку на наличие значений в currArr).
-  generateArr(nextArr);
-}
+//   // - 2. обнуляем значеничия массива nextArr;
+//   nextArr = [];
+//   // - 3. генерируем массив nextArr (помним про проверку на наличие значений в currArr).
+//   generateArr(nextArr);
+// }
 
-function changeToForward() {
-  const temp = [];
-  temp.push(...nextArr);
-  nextArr.push(...currArr);
-  currArr.push(...temp);
+// function changeToForward() {
+//   const temp = [];
+//   temp.push(...nextArr);
+//   nextArr.push(...currArr);
+//   currArr.push(...temp);
 
-  pastArr = [];
-  generateArr(pastArr);
-}
+//   pastArr = [];
+//   generateArr(pastArr);
+// }
 
 function generateArr(arr) {
   for (let i = 0; i < numberOfCards; i++) {
