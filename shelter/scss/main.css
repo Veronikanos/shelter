@@ -704,7 +704,7 @@ nav .nav-menu {
 .our-friends__slider {
   display: flex;
   flex-direction: column-reverse;
-  max-width: 290px;
+  max-width: 280px;
   gap: 20px;
   overflow-x: hidden;
   margin-bottom: 20px;
@@ -717,7 +717,7 @@ nav .nav-menu {
 }
 @media screen and (min-width: 1280px) {
   .our-friends__slider {
-    max-width: 1320px;
+    max-width: 1080px;
   }
 }
 .our-friends .button-wrapper {
@@ -869,11 +869,11 @@ nav .nav-menu {
 }
 .our-friends .transition-right {
   animation-name: move-right;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 .our-friends .transition-left {
   animation-name: move-left;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 
 .help-container {
@@ -1067,7 +1067,7 @@ nav .nav-menu {
 }
 
 footer {
-  background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+  background: url(../assets/images/noise_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
 }
 footer .footer-wrapper {
   margin: 0 auto;

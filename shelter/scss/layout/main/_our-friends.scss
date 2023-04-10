@@ -29,7 +29,7 @@
     // position: relative;
     display: flex;
     flex-direction: column-reverse;
-    max-width: calc(270px + 20px);
+    max-width: calc(270px + 10px);
     gap: 20px;
     overflow-x: hidden;
     margin-bottom: 20px;
@@ -41,7 +41,7 @@
     }
 
     @media screen and (min-width: $desktop) {
-      max-width: calc(1280px + 40px);
+      max-width: calc(990px + 90px);
       // width: 82.5%;
     }
   }
@@ -231,11 +231,11 @@
 
   .transition-right {
     animation-name: move-right;
-    animation-duration: 3s;
+    animation-duration: 2s;
   }
 
   .transition-left {
     animation-name: move-left;
-    animation-duration: 3s;
+    animation-duration: 2s;
   }
 }
