@@ -4,7 +4,9 @@ let nextArr = [];
 let numberOfCards = 0;
 let allPets;
 
-const petsCards = document.querySelector('.our-friends-list');
+const petsCards = document.querySelector(
+  '.our-friends-list.carousel'
+);
 const nextButton = document.querySelector('button.next');
 const prevButton = document.querySelector('button.prev');
 
@@ -17,12 +19,11 @@ async function start() {
   } catch (err) {
     console.log(err.message);
   }
-  console.log(allPets);
   init();
 }
 
 function init() {
-  const sliderWidth = getSlidersWidth();
+  countCardsPerPage();
   generateArr(nextArr);
   currArr.push(...nextArr);
   nextArr = [];
@@ -33,7 +34,6 @@ function init() {
   nextArr = [];
   generateArr(nextArr);
   petsCards.innerHTML = generateCards().join('');
-  console.log([...pastArr, ...currArr, ...nextArr]);
 }
 
 nextButton.addEventListener('click', moveRight);
@@ -56,7 +56,6 @@ function generateCards() {
   let markup = [];
 
   const carouselCards = [...pastArr, ...currArr, ...nextArr];
-  console.log(carouselCards);
 
   carouselCards.forEach((item) => {
     markup.push(`  	<li class="our-friends-item our-friends__pets">
@@ -142,9 +141,8 @@ function generateArr(arr) {
   }
 }
 
-function getSlidersWidth() {
+function countCardsPerPage() {
   const width = document.body.offsetWidth;
-  console.log('Width: ' + width);
 
   numberOfCards = 2;
   if (width < 768) {
@@ -152,8 +150,6 @@ function getSlidersWidth() {
   } else if (width >= 1280) {
     numberOfCards = 3;
   }
-
-  return width;
 }
 
 const smallWidthMediaQuery = window.matchMedia('(max-width: 767px)');

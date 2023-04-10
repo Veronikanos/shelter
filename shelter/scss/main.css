@@ -1332,7 +1332,6 @@ footer .address-text__header {
   .our-friends.pets-page .our-friends-list.pets-page {
     justify-content: space-evenly;
     row-gap: 30px;
-    max-width: 93%;
   }
 }
 @media screen and (min-width: 1280px) {
