@@ -44,24 +44,28 @@ function generateAllCardsChain() {
   //   [allCards[6], allCards[7]],
   // ];
 
-  // let allListOfCardsWithRepeats = [];
-
   for (let i = 0; i < 6; i++) {
-    arr.forEach((item) => {
-      allListOfCardsWithRepeats.push(shuffle(item));
+    [...arr].forEach((item) => {
+      const shuffledArr = shuffle(item);
+
+      allListOfCardsWithRepeats.push(...shuffledArr);
+      console.log(allListOfCardsWithRepeats);
     });
   }
 
-  allListOfCardsWithRepeats = allListOfCardsWithRepeats.flat();
+  // console.log(allListOfCardsWithRepeats);
+
+  // allListOfCardsWithRepeats = allListOfCardsWithRepeats.flat();
   console.log(allListOfCardsWithRepeats);
 }
 
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
+function shuffle(mixed) {
+  for (let i = mixed.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [mixed[i], mixed[j]] = [mixed[j], mixed[i]];
   }
-  return arr;
+  // console.log(mixed);
+  return mixed;
 }
 
 function countCardsPerPage() {
@@ -130,6 +134,8 @@ function handleClick(e) {
   let maxPage = Math.ceil(
     allListOfCardsWithRepeats.length / cardsPerPage
   );
+
+  console.log('currentPage ', currentPage);
 
   if (e.target === nextButton) {
     currentPage++;
