@@ -1,7 +1,14 @@
 let allPets;
-let numberOfCards = 0;
+let cardsPerPage = 0;
+let allListOfCardsWithRepeats = [];
+const petsCardsContainer = document.querySelector(
+  '.our-friends-list.pagination'
+);
+
+let currentPage;
 
 start();
+currentPage = 1;
 async function start() {
   try {
     const res = await fetch('./assets/data.json');
@@ -10,18 +17,15 @@ async function start() {
     console.log(err.message);
   }
   // console.log(allPets);
-  generateAllCards();
+  generateAllCardsChain();
+  countCardsPerPage();
+  insertMarkup(currentPage);
 }
 
-const petsCardsContainer = document.querySelector(
-  '.our-friends-list.pagination'
-);
-
-function generateAllCards() {
+function generateAllCardsChain() {
   let allCards = [];
-  countCardsPerPage();
 
-  for (let i = 0; i < numberOfCards; i++) {
+  for (let i = 0; i < allPets.length; i++) {
     let randomNumber = Math.floor(Math.random() * allPets.length);
     if (allCards.includes(randomNumber)) i--;
     else allCards.push(randomNumber);
@@ -40,90 +44,125 @@ function generateAllCards() {
   //   [allCards[6], allCards[7]],
   // ];
 
-  let result = [];
+  // let allListOfCardsWithRepeats = [];
 
   for (let i = 0; i < 6; i++) {
     arr.forEach((item) => {
-      result.push(shuffle(item));
+      allListOfCardsWithRepeats.push(shuffle(item));
     });
   }
 
-  result = result.flat();
-  console.log(result);
+  allListOfCardsWithRepeats = allListOfCardsWithRepeats.flat();
+  console.log(allListOfCardsWithRepeats);
+}
 
-  function shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
+  return arr;
 }
 
 function countCardsPerPage() {
   const width = document.body.offsetWidth;
 
-  numberOfCards = 6;
+  cardsPerPage = 6;
   if (width < 768) {
-    numberOfCards = 3;
+    cardsPerPage = 3;
   } else if (width >= 1280) {
-    numberOfCards = 8;
+    cardsPerPage = 8;
   }
 }
-// Иначе говоря, вначале мы можем сформировать абсолютно любой порадок из имеющихся элементов, но сделать так, чтобы между ЛЮБЫМИ двумя одинаковыми элементами было НЕ МЕНЬШЕ 5 других элементов. Иначе при пагинации на 6 карточек возможны "дубли"
 
-// Данное действие можно реализавать 4 этапа:
-// 1. генерация "зерна" - мы же хотим НАСТОЯЩИЙ рандом;
-// 2. Нарезка данного "зерна" на составные части;
-// 3. Последовательная модификация каждого отдельного "суб-зерна" для финальной сборки;
-// 4. Финальная сборка.
+function insertMarkup(currentPage) {
+  petsCardsContainer.innerHTML = '';
 
-// \\\\\\\\\\\\Генерация "зерна"\\\\\\\\\\\\
-// Здесь нам абсолютно не важно в каком порядке сгенерировать последовательность, главное "зерно" должно быть одинаковым по длинне массиву петов и все значения внутри него должны быть уникальными.
+  for (
+    let i = cardsPerPage * currentPage - cardsPerPage;
+    i < cardsPerPage * currentPage;
+    i++
+  ) {
+    const num = allListOfCardsWithRepeats[i];
 
-// Для такой цели хорошо-бы написать пару функции: одна из которых генерировала бы уникальное значени в определённом диапозоне, а вторая пыталась бы заполнить "зерно" уникальными значениями до длинны петов.
+    petsCardsContainer.insertAdjacentHTML(
+      'beforeend',
+      `
+			<li class="our-friends-item our-friends__pets">
+			<div class="our-friends-image">
+				<img
+					src=${allPets[num].img}
+					alt='${allPets[num].breed} ${allPets[num].name}' />
+			</div>
+			<span class="pet-name">${allPets[num].name}</span
+			><button class="btn transparent btn__learn-more">
+				Learn more
+			</button>
+		</li>
+		`
+    );
+  }
+}
 
-// return > [3, 1, 6, 7, 5, 2, 4, 0]
+// Listen all clicks to arrows
 
-// \\\\\\\\\\\\Нарезка "зерна"\\\\\\\\\\\\
-// Вышеуказанных функций достаточно, чтобы корректно работала пагинация на 8 карточек, но на других значениях возможно будут дубли. Самое время немного "ограничить" наш рандом.
-// Максимальное количество после 8 - это 6, следовательно нужно убедиться что между ЛЮБЫМИ идентичным значениями будет минимум 5 элементов.
-// Для этого предлагаю нарезать данное зерно на три части:
-// БЫЛО - [3, 1, 6, 7, 5, 2, 4, 0]
-// СТАЛО - [3, 1, 6] [7, 5, 2] [4, 0]
-// Теперь мы можем перемешивать значения внутри "суб-зерна" и при слиянии в один массив мы ГАРАНТИРОВАННО будем иметь отступ в пять элементов
+const paginationButtonsWrapper = document.querySelector(
+  '.our-friends__pagination'
+);
+const activePageNumber = paginationButtonsWrapper.querySelector(
+  '.pagination-btn__active'
+);
+const nextButton = paginationButtonsWrapper.querySelector(
+  '.pagination-btn__next'
+);
+const prevButton = paginationButtonsWrapper.querySelector(
+  '.pagination-btn__prev'
+);
+const lastButton = document.querySelector('.pagination-btn__last');
+const firstButton = document.querySelector('.pagination-btn__first');
 
-// \\\\\\\\\\\\Модификация "суб-зерна"\\\\\\\\\\\\
-// Всё просто - мы знаем длинну "суб-зерна" (3, либо 2), знаем возможное число комбинации (6 + 2) - думаю не надо объяснять что нужно делать.
+paginationButtonsWrapper.addEventListener('click', handleClick);
 
-// \\\\\\\\\\\\Финальная сборка.\\\\\\\\\\\\
-// 1. Создайте пустой массив - [].
-// 2. Положите последовательно ВСЕ модифицируемые "суб-зЁрна" в массив.
-// 3. Повторите пункт 2 ещё пять раз.
+function handleClick(e) {
+  if (e.target.tagName != 'BUTTON') return;
 
-// БЫЛО - [3, 1, 6] [7, 5, 2] [4, 0]
-// СТАЛО - (48) [6, 3, 1, 7, 5, 2, 4, 0, 1, 3, 6, 5, 7, 2, 4, 0, 1, 6, 3, 5, 2, 7, 4, 0, 3, 6, 1, 7, 2, 5, 4, 0, 1, 3, 6, 5, 7, 2, 4, 0, 6, 3, 1, 7, 5, 2, 4, 0]
+  // let pastCards = cardsPerPage * currentPage;
+  let maxPage = Math.ceil(
+    allListOfCardsWithRepeats.length / cardsPerPage
+  );
 
-// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// Генерация html
-// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// Первый этап выполнен и у вас есть значения, на основе которых можно брать информацию из JSON файла и генерировать карточки
+  if (e.target === nextButton) {
+    currentPage++;
+    if (currentPage <= maxPage) {
+      activePageNumber.textContent = currentPage;
+      insertMarkup(currentPage);
 
-// Настоятельно рекомендую познакомиться с "insertAdjacentHTML" и попрактиковаться самостоятельно (пока дам маленькую подсказку):
-// ///////////////////////
-// const text-box = document.querySelector('.text-box');
-// text-box.innerHTML = '';
-// const helloA = `Hello Word`;
-// const helloB = `Hello World`;
-// const html = `
-//       <div>
-//           <p>${helloA}, ${helloB}!</p>
-//       </div>
-//     `;
-// text-box.insertAdjacentHTML('afterbegin', html);
-// ///////////////////////
+      // if (prevButton)
+      prevButton.disabled = false;
+      firstButton.disabled = false;
 
-// Касаемо кнопок - думаю, это слишком просто, чтобы объяснять:
-// Всего четыре кнопки - всего  четыре простых логики.
+      if (currentPage === maxPage) disableButtons(nextButton);
+    } else {
+      disableButtons(nextButton);
+    }
+  } else if (e.target === prevButton) {
+    currentPage--;
+    if (currentPage >= 1) {
+      activePageNumber.textContent = currentPage;
+      insertMarkup(currentPage);
 
-// DimaD1988
+      nextButton.disabled = false;
+      lastButton.disabled = false;
+
+      if (currentPage === 1) disableButtons(prevButton);
+    } else {
+      disableButtons(prevButton);
+    }
+  }
+}
+
+function disableButtons(btn) {
+  btn.disabled = true;
+  if (btn === nextButton) lastButton.disabled = true;
+  else if (btn === prevButton) firstButton.disabled = true;
+}

@@ -62,7 +62,7 @@ function generateCards() {
   	<div class="our-friends-image">
   		<img
   			src=${item.img}
-  			alt=${item.breed} ${item.name} />
+  			alt='${item.breed} ${item.name}' />
   	</div>
   	<span class="pet-name">${item.name}</span
   	><button class="btn transparent btn__learn-more">

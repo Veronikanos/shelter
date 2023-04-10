@@ -1315,6 +1315,11 @@ footer .address-text__header {
 .our-friends.pets-page .our-friends__slider.pets-page {
   width: 100%;
 }
+@media screen and (min-width: 1280px) {
+  .our-friends.pets-page .our-friends__slider.pets-page {
+    max-width: 1200px;
+  }
+}
 .our-friends.pets-page .our-friends-list.pets-page {
   flex-wrap: wrap;
 }

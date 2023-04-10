@@ -64,6 +64,9 @@
 
   .our-friends__slider.pets-page {
     width: 100%;
+    @media screen and (min-width: $desktop) {
+      max-width: 1200px;
+    }
   }
 
   .our-friends-list.pets-page {
