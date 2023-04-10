@@ -29,19 +29,20 @@
     // position: relative;
     display: flex;
     flex-direction: column-reverse;
-    // max-width: 270px;
+    max-width: calc(270px + 10px);
     gap: 20px;
     overflow-x: hidden;
     margin-bottom: 20px;
 
     @media screen and (min-width: $tablet) {
       margin-bottom: 0;
-      width: 84%;
+      // gap: 40px;
+      max-width: calc(580px + 40px);
     }
 
     @media screen and (min-width: $desktop) {
-      max-width: 1280px;
-      width: 82.5%;
+      max-width: calc(990px + 90px);
+      // width: 82.5%;
     }
   }
 
@@ -100,26 +101,29 @@
   }
 
   &-list {
-    // width: 1200px;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     display: flex;
     justify-content: center;
     gap: 10px;
     width: 100%;
     margin: 0 auto;
     // height: 435px;
+
     // overflow: hidden;
 
     @media screen and (min-width: $tablet) {
-      justify-content: space-between;
+      // justify-content: space-between;
+      gap: 40px;
     }
 
-    @media screen and (min-width: 820px) {
-      justify-content: space-evenly;
-    }
+    // @media screen and (min-width: 820px) {
+    //   justify-content: space-evenly;
+
+    // }
 
     @media screen and (min-width: $desktop) {
-      justify-content: space-between;
+      gap: 90px;
+      // justify-content: space-between;
     }
   }
 
@@ -200,5 +204,38 @@
       background-color: $hover-btn;
       border-color: $hover-btn;
     }
+  }
+
+  .carousel {
+    position: relative;
+    left: 0;
+  }
+
+  @keyframes move-right {
+    from {
+      left: 0px;
+    }
+    to {
+      left: -100%;
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 100%;
+    }
+  }
+
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 1.5s;
+  }
+
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 1.5s;
   }
 }

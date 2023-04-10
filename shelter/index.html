@@ -26,7 +26,7 @@
           </h1></a
         >
         <nav class="nav nav-header">
-          <ul class="nav-menu">
+          <ul class="nav-menu" id="menu">
             <li class="nav-item">
               <a class="nav-item__link disabled" href=""
                 >About the shelter</a
@@ -47,11 +47,10 @@
             </li>
           </ul>
         </nav>
-        <button class="nav-button burger-main">
-          <svg width="30" height="22">
-            <use href="./assets/icons/sprite.svg#burger"></use>
-          </svg>
+        <button class="nav-button burger-main burger-js">
+          <span class="burger-line"></span>
         </button>
+        <div class="popup" id="popup"></div>
       </div>
     </header>
     <main>
@@ -121,43 +120,7 @@
             are looking for a house
           </h3>
           <div class="our-friends__slider main-page">
-            <div class="cards-wrapper">
-              <ul class="our-friends-list main-page">
-                <li class="our-friends-item our-friends__main">
-                  <div class="our-friends-image">
-                    <img
-                      src="./assets/images/pets/katrine.png"
-                      alt="grey cat" />
-                  </div>
-                  <span class="pet-name">Katrine</span
-                  ><button class="btn transparent btn__learn-more">
-                    Learn more
-                  </button>
-                </li>
-                <li class="our-friends-item our-friends__main">
-                  <div class="our-friends-image">
-                    <img
-                      src="./assets/images/pets/jennifer.png"
-                      alt="little white dog" />
-                  </div>
-                  <span class="pet-name">Jennifer</span
-                  ><button class="btn transparent btn__learn-more">
-                    Learn more
-                  </button>
-                </li>
-                <li class="our-friends-item our-friends__main">
-                  <div class="our-friends-image">
-                    <img
-                      src="./assets/images/pets/woody.png"
-                      alt="big labrador" />
-                  </div>
-                  <span class="pet-name">Woody</span
-                  ><button class="btn transparent btn__learn-more">
-                    Learn more
-                  </button>
-                </li>
-              </ul>
-            </div>
+            <ul class="our-friends-list main-page carousel"></ul>
           </div>
           <div class="button-wrapper">
             <button class="prev">
@@ -339,5 +302,6 @@
       </div>
     </footer>
     <script src="./index.js" type="module"></script>
+    <script src="./js/slider.js" type="module"></script>
   </body>
 </html>

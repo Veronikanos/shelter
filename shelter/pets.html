@@ -26,7 +26,7 @@
           </h1></a
         >
         <nav class="nav nav-header">
-          <ul class="nav-menu">
+          <ul class="nav-menu" id="menu">
             <li class="nav-item">
               <a class="nav-item__link" href="./index.html"
                 >About the shelter</a
@@ -47,11 +47,10 @@
             </li>
           </ul>
         </nav>
-        <button class="nav-button burger-pets">
-          <svg width="30" height="22">
-            <use href="./assets/icons/sprite.svg#burger"></use>
-          </svg>
+        <button class="nav-button burger-pets burger-js">
+          <span class="burger-line"></span>
         </button>
+        <div class="popup" id="popup"></div>
       </div>
     </header>
     <main>
@@ -62,96 +61,7 @@
             are looking for a house
           </h3>
           <div class="our-friends__slider pets-page">
-            <ul class="our-friends-list pets-page">
-              <li class="our-friends-item our-friends__pets">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/katrine.png"
-                    alt="grey cat" />
-                </div>
-                <span class="pet-name">Katrine</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item our-friends__pets">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/jennifer.png"
-                    alt="little white dog labrador" />
-                </div>
-                <span class="pet-name">Jennifer</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item our-friends__pets">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/woody.png"
-                    alt="big golden retriever" />
-                </div>
-                <span class="pet-name">Woody</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item our-friends__pets">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/sophia.png"
-                    alt="small shih tzu dog" />
-                </div>
-                <span class="pet-name">Sophia</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item our-friends__pets">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/timmy.png"
-                    alt="light grey british shorthair cat" />
-                </div>
-                <span class="pet-name">Timmy</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item our-friends__pets">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/charly.png"
-                    alt="Jack Russel Terrier" />
-                </div>
-                <span class="pet-name">Charly</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item our-friends__pets">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/scarlett.png"
-                    alt="Jack Russel Terrier" />
-                </div>
-                <span class="pet-name">Scarlett</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-              <li class="our-friends-item our-friends__pets">
-                <div class="our-friends-image">
-                  <img
-                    src="./assets/images/pets/freddie.png"
-                    alt="British shorthair white and grey cat" />
-                </div>
-                <span class="pet-name">Freddie</span
-                ><button class="btn transparent btn__learn-more">
-                  Learn more
-                </button>
-              </li>
-            </ul>
+            <ul class="our-friends-list pets-page pagination"></ul>
           </div>
           <div class="our-friends__pagination">
             <button
@@ -246,5 +156,6 @@
       </div>
     </footer>
     <script src="./index.js" type="module"></script>
+    <script src="./js/pagination.js" type="module"></script>
   </body>
 </html>

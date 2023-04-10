@@ -64,6 +64,9 @@
 
   .our-friends__slider.pets-page {
     width: 100%;
+    @media screen and (min-width: $desktop) {
+      max-width: 1200px;
+    }
   }
 
   .our-friends-list.pets-page {
@@ -80,7 +83,7 @@
     @media screen and (min-width: $tablet) {
       justify-content: space-evenly;
       row-gap: 30px;
-      max-width: 93%;
+      // max-width: 93%;
     }
     @media screen and (min-width: $desktop) {
       justify-content: space-between;
