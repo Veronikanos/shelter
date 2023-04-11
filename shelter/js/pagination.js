@@ -16,7 +16,6 @@ async function start() {
   } catch (err) {
     console.log(err.message);
   }
-  // console.log(allPets);
   generateAllCardsChain();
   countCardsPerPage();
   insertMarkup(currentPage);
@@ -38,33 +37,21 @@ function generateAllCardsChain() {
     arr[i] = allCards.slice(i * size, i * size + size);
   }
 
-  // let arr = [
-  //   [allCards[0], allCards[1], allCards[2]],
-  //   [allCards[3], allCards[4], allCards[5]],
-  //   [allCards[6], allCards[7]],
-  // ];
-
   for (let i = 0; i < 6; i++) {
     [...arr].forEach((item) => {
       const shuffledArr = shuffle(item);
-
       allListOfCardsWithRepeats.push(...shuffledArr);
-      console.log(allListOfCardsWithRepeats);
     });
   }
-
-  // console.log(allListOfCardsWithRepeats);
-
-  // allListOfCardsWithRepeats = allListOfCardsWithRepeats.flat();
-  console.log(allListOfCardsWithRepeats);
 }
+
+console.log(allListOfCardsWithRepeats);
 
 function shuffle(mixed) {
   for (let i = mixed.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
     [mixed[i], mixed[j]] = [mixed[j], mixed[i]];
   }
-  // console.log(mixed);
   return mixed;
 }
 
@@ -82,11 +69,10 @@ function countCardsPerPage() {
 function insertMarkup(currentPage) {
   petsCardsContainer.innerHTML = '';
 
-  for (
-    let i = cardsPerPage * currentPage - cardsPerPage;
-    i < cardsPerPage * currentPage;
-    i++
-  ) {
+  const offset = cardsPerPage * currentPage - cardsPerPage;
+  const range = cardsPerPage * currentPage;
+
+  for (let i = offset; i < range; i++) {
     const num = allListOfCardsWithRepeats[i];
 
     petsCardsContainer.insertAdjacentHTML(
@@ -109,7 +95,6 @@ function insertMarkup(currentPage) {
 }
 
 // Listen all clicks to arrows
-
 const paginationButtonsWrapper = document.querySelector(
   '.our-friends__pagination'
 );
@@ -122,53 +107,88 @@ const nextButton = paginationButtonsWrapper.querySelector(
 const prevButton = paginationButtonsWrapper.querySelector(
   '.pagination-btn__prev'
 );
-const lastButton = document.querySelector('.pagination-btn__last');
-const firstButton = document.querySelector('.pagination-btn__first');
 
 paginationButtonsWrapper.addEventListener('click', handleClick);
 
-function handleClick(e) {
-  if (e.target.tagName != 'BUTTON') return;
+const lastButton = document.querySelector('.pagination-btn__last');
+const firstButton = document.querySelector('.pagination-btn__first');
 
-  // let pastCards = cardsPerPage * currentPage;
+function handleClick(e) {
+  const target = e.target.closest('button');
+  if (!target) return;
+
   let maxPage = Math.ceil(
     allListOfCardsWithRepeats.length / cardsPerPage
   );
 
-  console.log('currentPage ', currentPage);
-
-  if (e.target === nextButton) {
+  if (target === nextButton) {
     currentPage++;
-    if (currentPage <= maxPage) {
+
+    if (currentPage < maxPage) {
       activePageNumber.textContent = currentPage;
       insertMarkup(currentPage);
 
-      // if (prevButton)
       prevButton.disabled = false;
       firstButton.disabled = false;
-
-      if (currentPage === maxPage) disableButtons(nextButton);
-    } else {
-      disableButtons(nextButton);
     }
-  } else if (e.target === prevButton) {
+  } else if (target === prevButton) {
     currentPage--;
-    if (currentPage >= 1) {
+    if (currentPage > 1) {
       activePageNumber.textContent = currentPage;
       insertMarkup(currentPage);
 
       nextButton.disabled = false;
       lastButton.disabled = false;
-
-      if (currentPage === 1) disableButtons(prevButton);
-    } else {
-      disableButtons(prevButton);
     }
+  } else if (target === lastButton) {
+    currentPage = maxPage;
+    insertMarkup(maxPage);
+  } else if (target === firstButton) {
+    currentPage = 1;
+    insertMarkup(currentPage);
+  }
+
+  if (currentPage === maxPage) {
+    activePageNumber.textContent = currentPage;
+    disableButtons(nextButton);
+    insertMarkup(maxPage);
+  }
+
+  if (currentPage === 1) {
+    activePageNumber.textContent = currentPage;
+    disableButtons(prevButton);
+    insertMarkup(currentPage);
   }
 }
 
 function disableButtons(btn) {
   btn.disabled = true;
-  if (btn === nextButton) lastButton.disabled = true;
-  else if (btn === prevButton) firstButton.disabled = true;
+  if (btn === nextButton) {
+    lastButton.disabled = true;
+    firstButton.disabled = false;
+    prevButton.disabled = false;
+  } else if (btn === prevButton) {
+    firstButton.disabled = true;
+    lastButton.disabled = false;
+    nextButton.disabled = false;
+  }
 }
+
+const smallWidthMediaQuery = window.matchMedia('(max-width: 767px)');
+const mediumWidthMediaQuery = window.matchMedia(
+  '(min-width: 768px) and (max-width: 1279px)'
+);
+const largeWidthMediaQuery = window.matchMedia('(min-width: 1280px)');
+
+function mediaEvent(e) {
+  if (e.matches) {
+    countCardsPerPage();
+    currentPage = 1;
+    activePageNumber.textContent = currentPage;
+    disableButtons(prevButton);
+    insertMarkup(currentPage);
+  }
+}
+smallWidthMediaQuery.addEventListener('change', mediaEvent);
+mediumWidthMediaQuery.addEventListener('change', mediaEvent);
+largeWidthMediaQuery.addEventListener('change', mediaEvent);

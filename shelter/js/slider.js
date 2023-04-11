@@ -165,7 +165,6 @@ function mediaEvent(e) {
     nextArr = [];
     numberOfCards = 0;
     init();
-    console.log(document.body.offsetWidth);
   }
 }
 smallWidthMediaQuery.addEventListener('change', mediaEvent);
