@@ -1,5 +1,3 @@
-import {createModalAfterLoading} from './modal.js';
-
 let allPets;
 let cardsPerPage = 0;
 let allListOfCardsWithRepeats = [];
@@ -93,7 +91,6 @@ function insertMarkup(currentPage) {
 		`
     );
   }
-  createModalAfterLoading(allPets);
 }
 
 // Listen all clicks to arrows
@@ -111,8 +108,6 @@ const prevButton = paginationButtonsWrapper.querySelector(
 );
 
 paginationButtonsWrapper.addEventListener('click', handleClick);
-
-// createModalAfterLoading();
 
 const lastButton = document.querySelector('.pagination-btn__last');
 const firstButton = document.querySelector('.pagination-btn__first');
