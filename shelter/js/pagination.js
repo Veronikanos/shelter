@@ -94,7 +94,6 @@ function insertMarkup(currentPage) {
 }
 
 // Listen all clicks to arrows
-
 const paginationButtonsWrapper = document.querySelector(
   '.our-friends__pagination'
 );
@@ -107,28 +106,28 @@ const nextButton = paginationButtonsWrapper.querySelector(
 const prevButton = paginationButtonsWrapper.querySelector(
   '.pagination-btn__prev'
 );
-const lastButton = document.querySelector('.pagination-btn__last');
-const firstButton = document.querySelector('.pagination-btn__first');
 
 paginationButtonsWrapper.addEventListener('click', handleClick);
 
-function handleClick(e) {
-  if (e.target.tagName != 'BUTTON') return;
+const lastButton = document.querySelector('.pagination-btn__last');
+const firstButton = document.querySelector('.pagination-btn__first');
 
-  // let pastCards = cardsPerPage * currentPage;
+function handleClick(e) {
+  const target = e.target.closest('button');
+  if (!target) return;
+
   let maxPage = Math.ceil(
     allListOfCardsWithRepeats.length / cardsPerPage
   );
 
   console.log('currentPage ', currentPage);
 
-  if (e.target === nextButton) {
+  if (target === nextButton) {
     currentPage++;
     if (currentPage <= maxPage) {
       activePageNumber.textContent = currentPage;
       insertMarkup(currentPage);
 
-      // if (prevButton)
       prevButton.disabled = false;
       firstButton.disabled = false;
 
@@ -136,7 +135,7 @@ function handleClick(e) {
     } else {
       disableButtons(nextButton);
     }
-  } else if (e.target === prevButton) {
+  } else if (target === prevButton) {
     currentPage--;
     if (currentPage >= 1) {
       activePageNumber.textContent = currentPage;
