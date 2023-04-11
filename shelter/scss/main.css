@@ -1410,8 +1410,125 @@ footer .address-text__header {
   position: relative;
   background: #fafafa;
   border-radius: 9px;
-  width: 300px;
-  min-height: 120px;
+  width: 240px;
   max-height: 90%;
-  overflow: auto;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 630px;
+    min-height: 350px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal {
+    width: 900px;
+    min-height: 500px;
+  }
+}
+.modal-image__wrapper {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .modal-image__wrapper {
+    display: block;
+  }
+}
+.modal-image {
+  width: 350px;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 1280px) {
+  .modal-image {
+    width: 500px;
+  }
+}
+.modal__content-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #f1cdb3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(60%, -100%);
+  cursor: pointer;
+}
+.modal_content {
+  padding: 10px;
+}
+@media screen and (min-width: 768px) {
+  .modal_content {
+    display: flex;
+    flex: 1 1 auto;
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal_content {
+    padding: 50px 20px 0 20px;
+    gap: 30px;
+  }
+}
+.modal-text {
+  color: #000000;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .modal-text {
+    width: 280px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal-text {
+    width: 351px;
+  }
+}
+.modal-text__title {
+  color: inherit;
+  margin-bottom: 10px;
+}
+.modal-text__subtitle {
+  color: inherit;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1280px) {
+  .modal-text__subtitle {
+    margin-bottom: 40px;
+  }
+}
+.modal-text__description {
+  margin-bottom: 24px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.0769230769;
+  letter-spacing: 0.06em;
+  text-align: justify;
+}
+@media screen and (min-width: 768px) {
+  .modal-text__description {
+    text-align: start;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal-text__description {
+    font-size: 15px;
+    line-height: 1.1333333333;
+    margin-bottom: 40px;
+  }
+}
+.modal-text__list {
+  padding-left: 25px;
+  list-style-type: disc;
+  text-align: left;
+  color: #000000;
+}
+.modal-text__list-item span {
+  font-weight: 700;
 }/*# sourceMappingURL=main.css.map */
