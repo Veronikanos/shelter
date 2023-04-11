@@ -120,39 +120,59 @@ function handleClick(e) {
     allListOfCardsWithRepeats.length / cardsPerPage
   );
 
-  console.log('currentPage ', currentPage);
-
   if (target === nextButton) {
     currentPage++;
-    if (currentPage <= maxPage) {
+    if (currentPage < maxPage) {
       activePageNumber.textContent = currentPage;
       insertMarkup(currentPage);
 
       prevButton.disabled = false;
       firstButton.disabled = false;
 
-      if (currentPage === maxPage) disableButtons(nextButton);
+      // if (currentPage === maxPage) disableButtons(nextButton);
     } else {
       disableButtons(nextButton);
     }
   } else if (target === prevButton) {
     currentPage--;
-    if (currentPage >= 1) {
+    if (currentPage > 1) {
       activePageNumber.textContent = currentPage;
       insertMarkup(currentPage);
 
       nextButton.disabled = false;
       lastButton.disabled = false;
-
-      if (currentPage === 1) disableButtons(prevButton);
     } else {
       disableButtons(prevButton);
     }
+  } else if (target === lastButton) {
+    currentPage = maxPage;
+    insertMarkup(maxPage);
+    // console.log();
+  } else if (target === firstButton) {
+    currentPage = 1;
+    insertMarkup(currentPage);
+  }
+
+  if (currentPage === maxPage) {
+    activePageNumber.textContent = currentPage;
+    disableButtons(nextButton);
+  }
+
+  if (currentPage === 1) {
+    activePageNumber.textContent = currentPage;
+    disableButtons(prevButton);
   }
 }
 
 function disableButtons(btn) {
   btn.disabled = true;
-  if (btn === nextButton) lastButton.disabled = true;
-  else if (btn === prevButton) firstButton.disabled = true;
+  if (btn === nextButton) {
+    lastButton.disabled = true;
+    firstButton.disabled = false;
+    prevButton.disabled = false;
+  } else if (btn === prevButton) {
+    firstButton.disabled = true;
+    lastButton.disabled = false;
+    nextButton.disabled = false;
+  }
 }
