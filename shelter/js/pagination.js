@@ -45,6 +45,8 @@ function generateAllCardsChain() {
   }
 }
 
+console.log(allListOfCardsWithRepeats);
+
 function shuffle(mixed) {
   for (let i = mixed.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -67,11 +69,11 @@ function countCardsPerPage() {
 function insertMarkup(currentPage) {
   petsCardsContainer.innerHTML = '';
 
-  for (
-    let i = cardsPerPage * currentPage - cardsPerPage;
-    i < cardsPerPage * currentPage;
-    i++
-  ) {
+  const offset = cardsPerPage * currentPage - cardsPerPage;
+  const range = cardsPerPage * currentPage;
+
+  for (let i = offset; i < range; i++) {
+    console.log(offset, range);
     const num = allListOfCardsWithRepeats[i];
 
     petsCardsContainer.insertAdjacentHTML(
@@ -128,8 +130,6 @@ function handleClick(e) {
 
       prevButton.disabled = false;
       firstButton.disabled = false;
-
-      // if (currentPage === maxPage) disableButtons(nextButton);
     } else {
       disableButtons(nextButton);
     }
@@ -156,11 +156,13 @@ function handleClick(e) {
   if (currentPage === maxPage) {
     activePageNumber.textContent = currentPage;
     disableButtons(nextButton);
+    insertMarkup(maxPage);
   }
 
   if (currentPage === 1) {
     activePageNumber.textContent = currentPage;
     disableButtons(prevButton);
+    insertMarkup(currentPage);
   }
 }
 
@@ -176,3 +178,22 @@ function disableButtons(btn) {
     nextButton.disabled = false;
   }
 }
+
+const smallWidthMediaQuery = window.matchMedia('(max-width: 767px)');
+const mediumWidthMediaQuery = window.matchMedia(
+  '(min-width: 768px) and (max-width: 1279px)'
+);
+const largeWidthMediaQuery = window.matchMedia('(min-width: 1280px)');
+
+function mediaEvent(e) {
+  if (e.matches) {
+    countCardsPerPage();
+    currentPage = 1;
+    activePageNumber.textContent = currentPage;
+    disableButtons(prevButton);
+    insertMarkup(currentPage);
+  }
+}
+smallWidthMediaQuery.addEventListener('change', mediaEvent);
+mediumWidthMediaQuery.addEventListener('change', mediaEvent);
+largeWidthMediaQuery.addEventListener('change', mediaEvent);
