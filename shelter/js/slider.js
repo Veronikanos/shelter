@@ -1,5 +1,3 @@
-import {createModalAfterLoading} from './modal.js';
-
 let pastArr = [];
 let currArr = [];
 let nextArr = [];
@@ -11,6 +9,8 @@ const petsCards = document.querySelector(
 );
 const nextButton = document.querySelector('button.next');
 const prevButton = document.querySelector('button.prev');
+
+// init();
 
 start();
 
@@ -36,7 +36,6 @@ function init() {
   nextArr = [];
   generateArr(nextArr);
   generateCards();
-  // petsCards.innerHTML = generateCards().join('');
 }
 
 nextButton.addEventListener('click', moveRight);
@@ -50,7 +49,7 @@ petsCards.addEventListener('animationend', (e) => {
     petsCards.classList.remove('transition-left');
     backward();
   }
-  // petsCards.innerHTML = generateCards().join('');
+
   generateCards();
   nextButton.addEventListener('click', moveRight);
   prevButton.addEventListener('click', moveLeft);
@@ -75,8 +74,6 @@ function generateCards() {
   </li>`);
   });
   petsCards.innerHTML = markup.join('');
-
-  createModalAfterLoading(allPets);
 }
 
 function moveRight() {

@@ -39,7 +39,6 @@ class Modal {
 
     this.setContent(content);
     this.appendModalElements();
-
     this.openModal();
   }
 
@@ -75,19 +74,30 @@ class Modal {
   }
 }
 
-export function createModalAfterLoading(allPets) {
-  const petCardElement = document.querySelector('.our-friends-list');
+const petCardElements = document.querySelector('.our-friends-list');
 
-  petCardElement.addEventListener('click', generateToolsModal);
+petCardElements.addEventListener('click', (e) => {
+  const activeElement = e.target.closest('li');
+  if (!activeElement) return;
+  generateToolsModal(activeElement);
+});
 
-  function generateToolsModal(e) {
-    const activeElement = e.target.closest('li');
-    if (!activeElement) return;
+let pets;
+getDataFromJson();
 
-    const id = activeElement.dataset.id;
-    const el = allPets.find((item) => item.id == id);
-    // console.log(el);
-    renderModal(` <div class="modal-image__wrapper">
+async function getDataFromJson() {
+  try {
+    const res = await fetch('./assets/data.json');
+    pets = await res.json();
+  } catch (err) {
+    console.log(err.message);
+  }
+}
+
+function generateToolsModal(activeElement) {
+  const id = activeElement.dataset.id;
+  const el = pets.find((item) => item.id == id);
+  renderModal(` <div class="modal-image__wrapper">
 		<img class="modal-image" src=${el.img}	alt="${el.name} - ${el.breed}" />
 		</div>
 				<div class="modal-text">
@@ -112,25 +122,25 @@ export function createModalAfterLoading(allPets) {
 						</li>
 					</ul>
 				</div>`);
-  }
+}
 
-  function renderModal(content) {
-    let modal = new Modal('tools-modal');
-    modal.buildModal(content);
+function renderModal(content) {
+  let modal = new Modal('tools-modal');
+  // console.log(modal);
+  modal.buildModal(content);
 
-    document
-      .querySelector('.overlay')
-      .addEventListener('click', (e) => {
-        if (
-          e.target.classList.contains('overlay') ||
-          e.target.closest('span')
-        )
-          handleModalClose(modal);
-        return;
-      });
-  }
+  document
+    .querySelector('.overlay')
+    .addEventListener('click', (e) => {
+      if (
+        e.target.classList.contains('overlay') ||
+        e.target.closest('span')
+      )
+        handleModalClose(modal);
+      return;
+    });
+}
 
-  function handleModalClose(modal) {
-    modal.closeModal();
-  }
+function handleModalClose(modal) {
+  modal.closeModal();
 }
