@@ -84,7 +84,31 @@ export function createModalAfterLoading(allPets) {
     const id = activeElement.dataset.id;
     const el = allPets.find((item) => item.id == id);
     console.log(el);
-    // renderModal(el.description);
+    renderModal(` <div class="modal-image__wrapper">
+		<img class="modal-image" src=${el.img}	alt="${el.name} - ${el.breed}" />
+		</div>
+				<div class="modal-text">
+					<h3 class="modal-text__title">${el.name}</h3>
+					<h4 class="modal-text__subtitle">${el.type} - ${el.breed}</h4>
+					<p class="modal-text__description">
+					${el.description} 
+					</p>
+					<ul class="modal-text__list">
+						<li class="modal-text__list-item">
+							<span>Age: </span>${el.age}
+						</li>
+						<li class="modal-text__list-item">
+							<span>Inoculations: </span>
+							${el.inoculations}
+						</li>
+						<li class="modal-text__list-item">
+							<span>Diseases: </span>${el.diseases}
+						</li>
+						<li class="modal-text__list-item">
+							<span>Parasites: </span>${el.parasites}
+						</li>
+					</ul>
+				</div>`);
     // renderModal();
   }
 

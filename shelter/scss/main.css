@@ -1466,6 +1466,7 @@ footer .address-text__header {
     display: flex;
     flex: 1 1 auto;
     padding-bottom: 0;
+    gap: 11px;
   }
 }
 @media screen and (min-width: 1280px) {
