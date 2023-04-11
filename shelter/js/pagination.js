@@ -16,7 +16,6 @@ async function start() {
   } catch (err) {
     console.log(err.message);
   }
-  // console.log(allPets);
   generateAllCardsChain();
   countCardsPerPage();
   insertMarkup(currentPage);
@@ -38,25 +37,12 @@ function generateAllCardsChain() {
     arr[i] = allCards.slice(i * size, i * size + size);
   }
 
-  // let arr = [
-  //   [allCards[0], allCards[1], allCards[2]],
-  //   [allCards[3], allCards[4], allCards[5]],
-  //   [allCards[6], allCards[7]],
-  // ];
-
   for (let i = 0; i < 6; i++) {
     [...arr].forEach((item) => {
       const shuffledArr = shuffle(item);
-
       allListOfCardsWithRepeats.push(...shuffledArr);
-      console.log(allListOfCardsWithRepeats);
     });
   }
-
-  // console.log(allListOfCardsWithRepeats);
-
-  // allListOfCardsWithRepeats = allListOfCardsWithRepeats.flat();
-  console.log(allListOfCardsWithRepeats);
 }
 
 function shuffle(mixed) {
@@ -64,7 +50,6 @@ function shuffle(mixed) {
     let j = Math.floor(Math.random() * (i + 1));
     [mixed[i], mixed[j]] = [mixed[j], mixed[i]];
   }
-  // console.log(mixed);
   return mixed;
 }
 
