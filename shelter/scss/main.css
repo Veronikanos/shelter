@@ -1392,4 +1392,26 @@ footer .address-text__header {
 }
 .our-friends.pets-page .our-friends__pagination .pagination-btn .pagination-btn > svg {
   fill: #292929;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  background: #fafafa;
+  border-radius: 9px;
+  width: 300px;
+  min-height: 120px;
+  max-height: 90%;
+  overflow: auto;
 }/*# sourceMappingURL=main.css.map */

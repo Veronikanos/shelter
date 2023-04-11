@@ -1,3 +1,5 @@
+import {createModalAfterLoading} from './modal.js';
+
 let allPets;
 let cardsPerPage = 0;
 let allListOfCardsWithRepeats = [];
@@ -9,6 +11,7 @@ let currentPage;
 
 start();
 currentPage = 1;
+
 async function start() {
   try {
     const res = await fetch('./assets/data.json');
@@ -45,8 +48,6 @@ function generateAllCardsChain() {
   }
 }
 
-console.log(allListOfCardsWithRepeats);
-
 function shuffle(mixed) {
   for (let i = mixed.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -78,7 +79,7 @@ function insertMarkup(currentPage) {
     petsCardsContainer.insertAdjacentHTML(
       'beforeend',
       `
-			<li class="our-friends-item our-friends__pets">
+			<li class="our-friends-item our-friends__pets" data-id='${allPets[num].id}'>
 			<div class="our-friends-image">
 				<img
 					src=${allPets[num].img}
@@ -92,6 +93,7 @@ function insertMarkup(currentPage) {
 		`
     );
   }
+  createModalAfterLoading(allPets);
 }
 
 // Listen all clicks to arrows
@@ -109,6 +111,8 @@ const prevButton = paginationButtonsWrapper.querySelector(
 );
 
 paginationButtonsWrapper.addEventListener('click', handleClick);
+
+// createModalAfterLoading();
 
 const lastButton = document.querySelector('.pagination-btn__last');
 const firstButton = document.querySelector('.pagination-btn__first');
