@@ -1,3 +1,5 @@
+import {createModalAfterLoading} from './modal.js';
+
 let pastArr = [];
 let currArr = [];
 let nextArr = [];
@@ -33,7 +35,8 @@ function init() {
   currArr.push(...nextArr);
   nextArr = [];
   generateArr(nextArr);
-  petsCards.innerHTML = generateCards().join('');
+  generateCards();
+  // petsCards.innerHTML = generateCards().join('');
 }
 
 nextButton.addEventListener('click', moveRight);
@@ -47,7 +50,8 @@ petsCards.addEventListener('animationend', (e) => {
     petsCards.classList.remove('transition-left');
     backward();
   }
-  petsCards.innerHTML = generateCards().join('');
+  // petsCards.innerHTML = generateCards().join('');
+  generateCards();
   nextButton.addEventListener('click', moveRight);
   prevButton.addEventListener('click', moveLeft);
 });
@@ -58,7 +62,7 @@ function generateCards() {
   const carouselCards = [...pastArr, ...currArr, ...nextArr];
 
   carouselCards.forEach((item) => {
-    markup.push(`  	<li class="our-friends-item our-friends__pets">
+    markup.push(`  	<li class="our-friends-item our-friends__pets" data-id=${item.id}>
   	<div class="our-friends-image">
   		<img
   			src=${item.img}
@@ -70,8 +74,9 @@ function generateCards() {
   	</button>
   </li>`);
   });
+  petsCards.innerHTML = markup.join('');
 
-  return markup;
+  createModalAfterLoading(allPets);
 }
 
 function moveRight() {

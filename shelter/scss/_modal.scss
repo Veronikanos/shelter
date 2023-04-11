@@ -33,13 +33,7 @@
 
     @media screen and (min-width: $tablet) {
       display: block;
-      // width: 350px;
-      // flex: 350px;
     }
-
-    // & img {
-    //   width: 350px;
-    // }
   }
 
   &-image {
@@ -65,6 +59,12 @@
     transform: translate(60%, -100%);
     cursor: pointer;
     // z-index: 9999;
+    @extend %transition;
+  }
+
+  &__content-icon:hover,
+  &__content-icon:focus {
+    background-color: $primary-color;
   }
 
   &_content {
@@ -72,11 +72,11 @@
     @media screen and (min-width: $tablet) {
       display: flex;
       flex: 1 1 auto;
-      padding-bottom: 0;
+      // padding-bottom: 0;
       gap: 11px;
     }
     @media screen and (min-width: $desktop) {
-      padding: 50px 20px 0 20px;
+      padding: 50px 20px;
       gap: 30px;
     }
   }

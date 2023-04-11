@@ -42,7 +42,7 @@ class Modal {
 
     this.openModal();
 
-    console.log(this.modal);
+    // console.log(this.modal);
   }
 
   createDomNode(node, element, ...classes) {
@@ -68,12 +68,17 @@ class Modal {
 
   openModal() {
     document.body.append(this.overlay);
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal() {
+    document.querySelector('.overlay').remove();
+    document.body.style.overflow = 'auto';
   }
 }
 
 export function createModalAfterLoading(allPets) {
   const petCardElement = document.querySelector('.our-friends-list');
-  console.log(petCardElement);
 
   petCardElement.addEventListener('click', generateToolsModal);
 
@@ -83,7 +88,7 @@ export function createModalAfterLoading(allPets) {
 
     const id = activeElement.dataset.id;
     const el = allPets.find((item) => item.id == id);
-    console.log(el);
+    // console.log(el);
     renderModal(` <div class="modal-image__wrapper">
 		<img class="modal-image" src=${el.img}	alt="${el.name} - ${el.breed}" />
 		</div>
@@ -109,11 +114,25 @@ export function createModalAfterLoading(allPets) {
 						</li>
 					</ul>
 				</div>`);
-    // renderModal();
   }
 
   function renderModal(content) {
     let modal = new Modal('tools-modal');
     modal.buildModal(content);
+
+    document
+      .querySelector('.overlay')
+      .addEventListener('click', (e) => {
+        if (
+          e.target.classList.contains('overlay') ||
+          e.target.closest('span')
+        )
+          handleModalClose(modal);
+        return;
+      });
+  }
+
+  function handleModalClose(modal) {
+    modal.closeModal();
   }
 }

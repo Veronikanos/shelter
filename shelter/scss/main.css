@@ -159,7 +159,7 @@ p {
   color: #b2b2b2;
 }
 
-.pets-header .burger-pets .burger-line,
+.modal__content-icon, .pets-header .burger-pets .burger-line,
 .pets-header .burger-pets::before,
 .pets-header .burger-pets::after, .btn:disabled {
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1458,6 +1458,9 @@ footer .address-text__header {
   transform: translate(60%, -100%);
   cursor: pointer;
 }
+.modal__content-icon:hover, .modal__content-icon:focus {
+  background-color: #f1cdb3;
+}
 .modal_content {
   padding: 10px;
 }
@@ -1465,13 +1468,12 @@ footer .address-text__header {
   .modal_content {
     display: flex;
     flex: 1 1 auto;
-    padding-bottom: 0;
     gap: 11px;
   }
 }
 @media screen and (min-width: 1280px) {
   .modal_content {
-    padding: 50px 20px 0 20px;
+    padding: 50px 20px;
     gap: 30px;
   }
 }
