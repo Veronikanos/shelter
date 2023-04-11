@@ -73,7 +73,6 @@ function insertMarkup(currentPage) {
   const range = cardsPerPage * currentPage;
 
   for (let i = offset; i < range; i++) {
-    console.log(offset, range);
     const num = allListOfCardsWithRepeats[i];
 
     petsCardsContainer.insertAdjacentHTML(
@@ -124,14 +123,13 @@ function handleClick(e) {
 
   if (target === nextButton) {
     currentPage++;
+
     if (currentPage < maxPage) {
       activePageNumber.textContent = currentPage;
       insertMarkup(currentPage);
 
       prevButton.disabled = false;
       firstButton.disabled = false;
-    } else {
-      disableButtons(nextButton);
     }
   } else if (target === prevButton) {
     currentPage--;
@@ -141,13 +139,10 @@ function handleClick(e) {
 
       nextButton.disabled = false;
       lastButton.disabled = false;
-    } else {
-      disableButtons(prevButton);
     }
   } else if (target === lastButton) {
     currentPage = maxPage;
     insertMarkup(maxPage);
-    // console.log();
   } else if (target === firstButton) {
     currentPage = 1;
     insertMarkup(currentPage);
