@@ -41,8 +41,6 @@ class Modal {
     this.appendModalElements();
 
     this.openModal();
-
-    // console.log(this.modal);
   }
 
   createDomNode(node, element, ...classes) {
