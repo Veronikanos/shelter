@@ -1,0 +1,144 @@
+footer {
+  background: url(../assets/images/noise_transparent@2X.png),
+    radial-gradient(
+      110.67% 538.64% at 5.73% 50%,
+      #513d2f 0%,
+      #1a1a1c 100%
+    ),
+    #211f20;
+
+  .footer-wrapper {
+    margin: 0 auto;
+    padding: 30px 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    // font-family: 'Georgia';
+    @media screen and (min-width: $tablet) {
+      padding: 30px 30px 0;
+      gap: 66px;
+    }
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+      gap: 0;
+      padding: 40px 40px 0;
+      max-width: 1280px;
+    }
+  }
+
+  address {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 61px;
+
+      text-align: left;
+      padding: 0 34px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 73%;
+      margin-top: 16px;
+      padding: 0;
+      gap: 0;
+    }
+
+    a p {
+      @extend %transition-color;
+    }
+
+    a:hover p {
+      color: $active-link;
+    }
+
+    .address-headers-text {
+      width: 80%;
+      margin: 0 auto;
+      font-family: $main-font;
+      letter-spacing: 0.06em;
+      font-weight: normal;
+      font-style: normal;
+      color: $main-color;
+      @media screen and (min-width: $tablet) {
+        width: 100%;
+      }
+      @media screen and (min-width: $desktop) {
+        max-width: 280px;
+        margin: 0;
+      }
+    }
+
+    .address-text {
+      font-family: $main-font;
+      font-size: 2rem;
+      line-height: calc(23 / 20);
+      letter-spacing: 0.06em;
+      font-weight: normal;
+      font-style: normal;
+      color: $primary-color;
+    }
+
+    .left-side {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 43px;
+    }
+
+    .right-side {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+      @media screen and (min-width: $tablet) {
+        gap: 0;
+      }
+
+      & a {
+        // align-self: flex-start;
+
+        & .address-text {
+          width: 258px;
+          text-align: left;
+        }
+      }
+    }
+
+    .email-link,
+    .phone-link,
+    .address-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      @media screen and (min-width: $tablet) {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .footer-image img {
+    width: 260px;
+    margin: 0 auto;
+    @media screen and (min-width: $tablet) {
+      width: 305px;
+    }
+  }
+
+  .address-text__header {
+    @extend %h3;
+    text-align: center;
+    @media screen and (min-width: $tablet) {
+      text-align: left;
+    }
+  }
+}

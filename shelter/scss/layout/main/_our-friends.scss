@@ -1,0 +1,241 @@
+.our-friends {
+  background-color: $light-bg;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+      position: relative;
+      margin: 0 30px;
+      gap: 60px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin: 0 auto;
+    }
+  }
+
+  &-header {
+    margin-bottom: 42px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__slider {
+    // position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: calc(270px + 10px);
+    gap: 20px;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 0;
+      // gap: 40px;
+      max-width: calc(580px + 40px);
+    }
+
+    @media screen and (min-width: $desktop) {
+      max-width: calc(990px + 90px);
+      // width: 82.5%;
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 42px;
+
+    @media screen and (min-width: $tablet) {
+      // gap: 604px;
+      position: absolute;
+      top: 49%;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: $desktop) {
+      gap: 1096px;
+      justify-content: space-between;
+      width: 94%;
+    }
+  }
+
+  .prev,
+  .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid $active-color;
+    outline: none;
+    cursor: pointer;
+    transition: background-color $transition-duration
+        $transition-timing-function,
+      border-color $transition-duration $transition-timing-function;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: $hover-btn;
+    border-color: $hover-btn;
+  }
+
+  .icon {
+    display: block;
+    border-radius: 50%;
+    fill: $dark-btn-text;
+  }
+
+  .arrow-right {
+    transform: rotate(-180deg);
+  }
+
+  &-list {
+    // flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+    // height: 435px;
+
+    // overflow: hidden;
+
+    @media screen and (min-width: $tablet) {
+      // justify-content: space-between;
+      gap: 40px;
+    }
+
+    // @media screen and (min-width: 820px) {
+    //   justify-content: space-evenly;
+
+    // }
+
+    @media screen and (min-width: $desktop) {
+      gap: 90px;
+      // justify-content: space-between;
+    }
+  }
+
+  // &-list.main-page {
+  //   // height: 435px;
+  //   // overflow: hidden;
+  // }
+
+  &-item {
+    width: 270px;
+    height: 100%;
+    border-radius: 9px;
+    background-color: $active-link;
+    box-shadow: none;
+    transition: box-shadow $transition-duration
+        $transition-timing-function,
+      color $transition-duration $transition-timing-function,
+      background-color $transition-duration
+        $transition-timing-function;
+
+    &:hover {
+      background-color: $main-color;
+      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    }
+  }
+
+  .our-friends__main:nth-child(1n + 2) {
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+
+  .our-friends__main:nth-child(1n + 3) {
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+    @media screen and (min-width: $desktop) {
+      display: block;
+    }
+  }
+
+  .our-friends__main:nth-child(1n + 4) {
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  &-image {
+    width: 270px;
+    height: 270px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 9px 9px 0px 0px;
+  }
+
+  .pet-name {
+    display: block;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-size: 2rem;
+    line-height: calc(23 / 20);
+    letter-spacing: 0.06em;
+    margin-bottom: 30px;
+  }
+
+  .our-friends__btn:hover {
+    border-color: $hover-btn;
+  }
+
+  .btn__learn-more {
+    margin-bottom: 30px;
+    transition: background-color $transition-duration
+        $transition-timing-function,
+      border-color $transition-duration $transition-timing-function;
+
+    &:hover {
+      background-color: $hover-btn;
+      border-color: $hover-btn;
+    }
+  }
+
+  .carousel {
+    position: relative;
+    left: 0;
+  }
+
+  @keyframes move-right {
+    from {
+      left: 0px;
+    }
+    to {
+      left: -100%;
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 100%;
+    }
+  }
+
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 1.5s;
+  }
+
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 1.5s;
+  }
+}

@@ -1,0 +1,46 @@
+.about {
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 40px;
+
+    @media screen and (min-width: $tablet) {
+      padding-left: 159px;
+      padding-right: 159px;
+      gap: 80px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+      padding-left: 175px;
+      padding-right: 175px;
+      gap: 120px;
+    }
+  }
+
+  &-image {
+    max-width: 100%;
+    padding: 0 5px;
+    margin: 0 auto;
+    @media screen and (min-width: $tablet) {
+      padding: 0;
+    }
+  }
+  &-header {
+    @media screen and (min-width: $tablet) {
+      width: 370px;
+    }
+  }
+  &-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    @media screen and (min-width: $desktop) {
+      width: 430px;
+    }
+  }
+}

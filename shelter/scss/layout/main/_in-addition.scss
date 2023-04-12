@@ -1,0 +1,113 @@
+.in-addition {
+  background-color: $light-bg;
+
+  &-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 43px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media screen and (min-width: $tablet) {
+      align-items: center;
+      gap: 60px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      max-width: 915px;
+      flex-direction: row;
+      padding-left: 0;
+      padding-right: 0;
+      gap: 30px;
+    }
+  }
+
+  &__image {
+    margin-top: 11px auto 0;
+    padding: 0 10px;
+    // padding-right: 20px;
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+    }
+
+    & img {
+      margin: 0 auto;
+    }
+  }
+
+  &-header {
+    @media screen and (min-width: $desktop) {
+      line-height: 1.3;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+    @media screen and (min-width: $tablet) {
+      width: 52%;
+      gap: 16px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 41%;
+    }
+  }
+
+  .name-of-bank {
+    color: $dark-headers-color;
+    letter-spacing: 0;
+    text-align: center;
+    @media screen and (min-width: $tablet) {
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+  }
+
+  .card-number {
+    position: relative;
+    padding: 12px 15px;
+    width: 281px;
+    margin: 0 auto;
+    background: $primary-color;
+    border-radius: 9px;
+    transition: background-color $transition-duration
+      $transition-timing-function;
+
+    @media screen and (min-width: $tablet) {
+      width: 350px;
+      text-align: left;
+      padding: 10px 15px;
+      margin: 0 0 6px;
+    }
+
+    & h4 {
+      position: relative;
+      left: 20px;
+      color: $dark-headers-color;
+
+      @media screen and (min-width: $tablet) {
+        left: 45px;
+      }
+    }
+  }
+
+  .card-number:hover {
+    background-color: $hover-btn;
+  }
+
+  .paragraph-s {
+    @extend %small-additional-text;
+  }
+
+  .card-number::before {
+    position: absolute;
+    content: url(../assets/icons/credit-card.svg);
+    height: 23px;
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+  }
+}

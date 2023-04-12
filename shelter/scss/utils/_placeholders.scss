@@ -1,0 +1,84 @@
+%h2 {
+  font-size: 2.5rem;
+  line-height: calc(32 / 25);
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  color: $dark-headers-color;
+  @media screen and (min-width: $tablet) {
+    font-size: 4.4rem;
+    line-height: calc(57 / 44);
+    letter-spacing: 0;
+  }
+}
+
+%h3 {
+  font-size: 2.5rem;
+  line-height: calc(32 / 25);
+  letter-spacing: 0.06em;
+  font-weight: normal;
+  color: $dark-headers-color;
+  @media screen and (min-width: $tablet) {
+    font-size: 3.5rem;
+    line-height: calc(45 / 35);
+  }
+}
+
+%h4 {
+  font-size: 1.5rem;
+  line-height: calc(17 / 15);
+  letter-spacing: 0.06em;
+  font-weight: normal;
+  color: $dark-headers-color;
+  @media screen and (min-width: $tablet) {
+    font-size: 2rem;
+    line-height: calc(23 / 20);
+  }
+}
+
+%h5 {
+  font-size: 1.5rem;
+  line-height: calc(17 / 15);
+  letter-spacing: 0.06em;
+  font-weight: normal;
+  color: $dark-headers-color;
+}
+
+p {
+  text-align: justify;
+  font-family: $secondary-font;
+  @media screen and (min-width: $tablet) {
+    text-align: left;
+  }
+}
+
+%small-additional-text {
+  font-family: $secondary-font;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: calc(18 / 12);
+  color: #b2b2b2;
+}
+
+%centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%transition {
+  transition: color $transition-duration $transition-timing-function,
+    background-color $transition-duration $transition-timing-function;
+}
+
+%transition-color {
+  transition: color $transition-duration $transition-timing-function;
+}
+
+%burger {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $active-color;
+}

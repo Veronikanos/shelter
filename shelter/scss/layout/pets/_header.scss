@@ -1,0 +1,49 @@
+.pets-header {
+  width: 100%;
+
+  .logo-pets {
+    color: $dark-headers-color;
+
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+
+    &:hover {
+      color: $active-color;
+    }
+
+    .header-name__pets {
+      color: $dark-btn-text;
+      @media screen and (min-width: $tablet) {
+        text-align: center;
+      }
+    }
+  }
+
+  nav {
+    .nav-item {
+      &__link {
+        color: $dark-headers-color;
+      }
+
+      &__link:hover,
+      &__link.disabled {
+        color: $dark-btn-text;
+      }
+    }
+  }
+
+  .burger-pets .burger-line,
+  .burger-pets::before,
+  .burger-pets::after {
+    background-color: #000000;
+    @extend %transition;
+  }
+
+  .burger-pets.active .burger-line,
+  .burger-pets.active::before,
+  .burger-pets.active::after {
+    background-color: $active-color;
+  }
+}

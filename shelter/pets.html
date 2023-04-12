@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Pets page</title>
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./scss/main.css" />
+  </head>
+  <body>
+    <header class="header pets-header">
+      <div class="container container-mobile">
+        <a class="logo logo-pets" href="./index.html"
+          ><span class="logo-name logo-name__pets">Cozy House</span>
+          <h1 class="header-name header-name__pets">
+            Shelter for pets in Boston
+          </h1></a
+        >
+        <nav class="nav nav-header">
+          <ul class="nav-menu" id="menu">
+            <li class="nav-item">
+              <a class="nav-item__link" href="./index.html"
+                >About the shelter</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-item__link disabled" href="">
+                Our pets
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item__link" href="./index.html#help"
+                >Help the shelter</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-item__link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="nav-button burger-pets burger-js">
+          <span class="burger-line"></span>
+        </button>
+        <div class="popup" id="popup"></div>
+      </div>
+    </header>
+    <main>
+      <section class="our-friends pets-page" id="our-friends">
+        <div class="container our-friends-container">
+          <h3 class="our-friends-header">
+            Our friends who <br />
+            are looking for a house
+          </h3>
+          <div class="our-friends__slider pets-page">
+            <ul class="our-friends-list pets-page pagination"></ul>
+          </div>
+          <div class="our-friends__pagination">
+            <button
+              disabled
+              class="btn pagination-btn pagination-btn__first">
+              <svg width="25" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-first"></use>
+              </svg>
+            </button>
+            <button
+              disabled
+              class="btn pagination-btn pagination-btn__prev">
+              <svg width="10" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-prev"></use>
+              </svg>
+            </button>
+            <button class="btn pagination-btn pagination-btn__active">
+              1
+            </button>
+            <button class="btn pagination-btn pagination-btn__next">
+              <svg width="10" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-next"></use>
+              </svg>
+            </button>
+            <button class="btn pagination-btn pagination-btn__last">
+              <svg width="25" height="11">
+                <use
+                  href="./assets/icons/sprite.svg#arrow-last"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="contacts">
+      <div class="footer-wrapper">
+        <address>
+          <div class="left-side">
+            <p class="address-headers-text address-text__header">
+              For questions and suggestions
+            </p>
+            <a class="email-link" href="mailto:email@shelter.com">
+              <svg width="40" height="26">
+                <use href="./assets/icons/sprite.svg#mail"></use>
+              </svg>
+
+              <p class="email address-text">email@shelter.com</p>
+            </a>
+            <a class="phone-link" href="tel:+136745677554">
+              <svg width="40" height="32">
+                <use href="./assets/icons/sprite.svg#phone"></use>
+              </svg>
+              <p class="phone address-text">+13 674 567 75 54</p>
+            </a>
+          </div>
+          <div class="right-side">
+            <p class="address-headers-text address-text__header">
+              We are waiting for your visit
+            </p>
+            <a
+              class="address-link"
+              href="https://www.google.com/maps/search/1+Central+Street,+Boston/@42.3521667,-71.0652078,15z/data=!3m1!4b1"
+              target="_blank">
+              <svg width="22" height="32">
+                <use href="./assets/icons/sprite.svg#pin"></use>
+              </svg>
+              <p class="address address-text">
+                1 Central Street, Boston (entrance from the store)
+              </p>
+            </a>
+            <a
+              class="address-link"
+              href="https://www.google.com/maps/search/18+South+Park,+London/@51.5107255,-0.1600785,12z/data=!3m1!4b1"
+              target="_blank">
+              <svg width="22" height="32">
+                <use href="./assets/icons/sprite.svg#pin"></use>
+              </svg>
+              <p class="address address-text">
+                18 South Park, London
+              </p>
+            </a>
+          </div>
+        </address>
+        <div class="footer-image">
+          <img
+            src="./assets/images/footer-puppy.png"
+            alt="puppy licks screen" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="./index.js" type="module"></script>
+    <script src="./js/pagination.js" type="module"></script>
+    <script src="./js/modal.js" type="module"></script>
+  </body>
+</html>
